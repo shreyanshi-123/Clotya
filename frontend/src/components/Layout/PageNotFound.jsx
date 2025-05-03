@@ -5,7 +5,7 @@ const PageNotFound = () => {
 
     return(
         <>
-            <MetaData title={"Page Not Found - The Ananta Aspire"} />
+            <MetaData title={"Page Not Found - The Clotya"} />
 
             <section className="max-w-5xl m-auto py-14 px-2.5 text-center flex flex-col gap-5">
                 <h3 className="text-8xl font-semibold text-primary-brown pt-1 text-center">404</h3>

@@ -1,11 +1,11 @@
 import './Footer.css';
 import { NavLink } from 'react-router-dom';
-import logo from '../../../assests/images/logo-black.png';
+// import logo from '../../../assests/images/logo-black.png';
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
 import { faFacebookF, faTwitter, faYoutube } from "@fortawesome/free-brands-svg-icons";
-
+const Logo =` ${process.env.REACT_APP_API_URL}.assets/images/logo-black.png`
 const Footer = () => {
     const menuLinks = [
         // {
@@ -64,12 +64,12 @@ const Footer = () => {
                     <div className="w-full md:w-1/2 flex flex-col gap-[15px] md:border-r border-primary-brown">
                         <NavLink to="/" className="block w-auto sm:w-max" reloadDocument={true}>
                         <LazyLoadImage
-                            src={logo}
+                            src={Logo}
                             alt="Vamana Arvindam"
                             className='header-logo w-40'
                         />
                         </NavLink>
-                        <p className="text-sm">We are the Authorized Channel Partner of 'The Ananta Aspire'. <br />
+                        <p className="text-sm">We are the Authorized Channel Partner of 'The Clotya'. <br />
                         This website is not the official website of developer & property, it belongs to authorized channel partner and it is for the information purpose only. <br />All rights for logo & images are reserved to developer.</p>
                         <p className='text-sm text-primary-brown font-semibold '>RERA Number : PBRERA-SAS79-PR0777</p>
                     </div>
@@ -102,7 +102,7 @@ const Footer = () => {
 
 
                 <div className="flex flex-col items-center text-center gap-1.5 ">
-                    {/* <p className='text-md'><strong>We are the Authorized Channel Partner of 'The Ananta Aspire'. <br />
+                    {/* <p className='text-md'><strong>We are the Authorized Channel Partner of 'The Clotya Aspire'. <br />
                     This website is not the official website of developer & property, it belongs to authorized channel partner and it is for the information purpose only. <br />All rights for logo & images are reserved to developer.</strong></p>
                     <p className='text-md'>Channel Partner RERA Number : Coming Soon</p>
                     <p className='text-md text-brown font-semibold mt-5'>Project RERA Number : PBRERA-SAS79-PR0777</p> */}

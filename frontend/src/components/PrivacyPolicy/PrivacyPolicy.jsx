@@ -7,9 +7,9 @@ const PrivacyPolicy = () => {
 
     return (
         <>
-            <MetaData title={"The Ananta Aspire | Privacy Policy - Protecting Your Information"}
-                description={"At The Ananta Aspire, we value your privacy. Learn how we collect, use, and protect your personal information."}
-                keywords={"The Ananta Aspire, privacy policy, data protection, personal information, data security, Zirakpur"} 
+            <MetaData title={"The Clotya Aspire | Privacy Policy - Protecting Your Information"}
+                description={"At The Clotya Aspire, we value your privacy. Learn how we collect, use, and protect your personal information."}
+                keywords={"The Clotya Aspire, privacy policy, data protection, personal information, data security, Zirakpur"} 
                 canonicalUrl={`${process.env.REACT_APP_API_URL}${location.pathname}`}
             />
 

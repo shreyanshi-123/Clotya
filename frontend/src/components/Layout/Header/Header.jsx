@@ -1,5 +1,5 @@
 import './Header.css';
-import logo from "../../../assests/images/logo-black.png";
+// import logo from "../../../assests/images/logo-black.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClose, faPhone, faBars } from "@fortawesome/free-solid-svg-icons";
 import { Dialog } from "@mui/material";
@@ -8,6 +8,8 @@ import { Link, NavLink, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 // import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import EnquireForm from '../EnquireForm/EnquireForm';
+
+const Logo =` ${process.env.REACT_APP_API_URL}.assets/images/logo-black.png`
 
 const Header = () => {
   const location = useLocation();
@@ -140,8 +142,8 @@ console.log(id,'click')
           <div className="w-1/4 lg:w-1/6 xl:w-1/4 px-2.5">
             <NavLink to="/" className="block w-auto sm:w-max" reloadDocument={true}>
               <LazyLoadImage
-                src={logo}
-                alt="The Ananta Aspire Logo"
+                src={Logo}
+                alt="The Clotya Aspire Logo"
                 style={{ width: "100px" }}
                 className='header-logo'
               />
@@ -236,7 +238,7 @@ console.log(id,'click')
         <div className="flex justify-end btn-icon">
           <FontAwesomeIcon icon={faClose} className="text-2xl cursor-pointer" onClick={newSidePopUpClose} />
         </div>
-        <EnquireForm title="Ananta Aspire Price List" button="Get New Price List" />
+        <EnquireForm title="Clotya Aspire Price List" button="Get New Price List" />
       </div>
     </>
   );
