@@ -28,7 +28,7 @@ function App() {
         contentStyle={{textAlign: "center", flex: 1}}
         overlayStyle={{backgroundColor: "#00000099"}}
       >
-       <p className='font-semibold text-xl mb-2'>Important</p>  'The Ananta Aspire' serves solely as a platform for online advertising services and does not facilitate sales between developers and website users. The information displayed does not guarantee that a developer or project is registered or compliant with the Real Estate (Regulation and Development) Act, 2016. Please exercise caution and independently verify all project information before making any purchase or decision.
+       <p className='font-semibold text-xl mb-2'>Important</p>  'The  Aspire' serves solely as a platform for online advertising services and does not facilitate sales between developers and website users. The information displayed does not guarantee that a developer or project is registered or compliant with the Real Estate (Regulation and Development) Act, 2016. Please exercise caution and independently verify all project information before making any purchase or decision.
       </CookieConsent> */}
 
       <BrowserRouter basename='/clotya'  >

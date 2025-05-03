@@ -1,123 +1,80 @@
-import './Footer.css';
-import { NavLink } from 'react-router-dom';
-// import logo from '../../../assests/images/logo-black.png';
-import { LazyLoadImage } from "react-lazy-load-image-component";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
-import { faFacebookF, faTwitter, faYoutube } from "@fortawesome/free-brands-svg-icons";
-const Logo =` ${process.env.REACT_APP_API_URL}.assets/images/logo-black.png`
+import React from 'react';
+
+const Logo = `${process.env.REACT_APP_API_URL}/assets/images/logo-white.webp`;
+
+const footerMenus = [
+    {
+        title: 'Information',
+        links: ['About Us', 'Privacy Policy', 'Returns Policy', 'Shipping Policy', 'Dropshipping'],
+    },
+    {
+        title: 'Account',
+        links: ['Dashboard', 'My Orders', 'My Wishlist', 'Account details', 'Track My Orders'],
+    },
+    {
+        title: 'Shop',
+        links: ['Affiliate', 'Bestsellers', 'Discount', 'Latest Products', 'Sale Products'],
+    },
+    {
+        title: 'Categories',
+        links: ['Women', 'Men', 'Bags', 'Outerwear', 'Shoes'],
+    },
+];
+ 
+
+ 
+
+const bottomLinks = ['Privacy Policy', 'Terms and Conditions', 'Returns Policy'];
+
+
 const Footer = () => {
-    const menuLinks = [
-        // {
-        //   name: "About Us",
-        //   redirect: "/about-us",
-        //   id: "about-us",
-        // },
-        {
-          name: "Floor Plan",
-          redirect: "/floor-plan",
-          id: "floorplan",
-        },
-        {
-          name: "Smart Living",
-          redirect: "/smart-living",
-          id: "smartliving",
-        },
-        {
-          name: "Amenities",
-          redirect: "/amenity",
-          id: "amenities",
-        },
-        {
-          name: "Connectivity",
-          redirect: "/connectivities",
-          id: "connectivity",
-        },
-        {
-          name: "Gallery",
-          redirect: "/galleries",
-          id: "gallery",
-        },
-        {
-          name: "Contact Us",
-          redirect: "/contactus",
-          id: "contact",
-        },
+    return (
+        <footer className="bg-white text-black text-sm">
+            <div className="max-w-7xxl mx-auto px-[15px]">
+                <div className=" px-0 py-[60px] mx-auto  flex flex-col md:flex-row flex-wrap gap-y-10 md:gap-y-0">
 
-    ];
-
-    const social = [
-        {
-            icon: faFacebookF,
-        },
-        {
-            icon: faTwitter,
-        },
-        {
-            icon: faYoutube,
-        },
-    ]
-    return(
-        <footer className="bg-primary-bg px-2.5 text-sm pt-16">
-            <div className='max-w-5xl m-auto py-10 px-2.5 flex flex-col gap-5'>
-            <div className="flex flex-col md:flex-row gap-[20px] justify-between pb-16">
-                    <div className="w-full md:w-1/2 flex flex-col gap-[15px] md:border-r border-primary-brown">
-                        <NavLink to="/" className="block w-auto sm:w-max" reloadDocument={true}>
-                        <LazyLoadImage
-                            src={Logo}
-                            alt="Vamana Arvindam"
-                            className='header-logo w-40'
-                        />
-                        </NavLink>
-                        <p className="text-sm">We are the Authorized Channel Partner of 'The Clotya'. <br />
-                        This website is not the official website of developer & property, it belongs to authorized channel partner and it is for the information purpose only. <br />All rights for logo & images are reserved to developer.</p>
-                        <p className='text-sm text-primary-brown font-semibold '>RERA Number : PBRERA-SAS79-PR0777</p>
+                    {/* First Column (approx. 30%) */}
+                    <div className="md:w-[30%] w-full pr-6">
+                        <div className="max-w-[310px]">
+                            <img className="invert w-[148px] mb-4" src={Logo} alt="Clotya Logo" />
+                            <p className="text-black font-[14px]">
+                                Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis in termapol.
+                            </p>
+                            <p className="text-black font-[14px]">(+800) 1234 5678 90 - info@example.com</p></div>
                     </div>
 
-                    <div className="w-full md:w-1/2 flex flex-col md:flex-row gap-[20px] justify-between">
-
-                        <div className="w-full md:w-auto flex flex-col gap-[15px] overflow-hidden items-start md:items-center md:ml-auto">
-                            <h6 className="text-lg font-bold text-center">Useful Links</h6>
-                            <ul className="grid grid-cols-[auto,auto] justify-center gap-x-[20px]">
-                                <li><NavLink smooth="true" to='/aboutus' className="text-sm font-medium hover:text-primary-brown" ><FontAwesomeIcon icon={faAngleRight} className="text-primary-brown pr-1.5"/> About Us</NavLink></li>
-                                {menuLinks.map((item, i) => (
-                                    <li key={i}><NavLink smooth="true" to={item.redirect} className="text-sm font-medium hover:text-primary-brown" target="_blank"><FontAwesomeIcon icon={faAngleRight} className="text-primary-brown pr-1.5"/> {item.name}</NavLink></li>
+                    {/* Other Columns (4 x ~17.5%) */}
+                    {footerMenus.map((menu, idx) => (
+                        <div key={idx} className="md:w-[17.5%] w-full">
+                            <h4 className="text-[16px] font-semibold mb-[15px]">{menu.title}</h4>
+                            <ul className=" text-black">
+                                {menu.links.map((link, i) => (
+                                    <li key={i} className='mt-[3px] leading-[1.6]' >
+                                        <a href="#" className="hover:text-black transition-colors text-[15px]">{link}</a>
+                                    </li>
                                 ))}
                             </ul>
                         </div>
-
-                        <div className="w-full md:w-auto flex flex-col gap-[15px] md:ml-auto">
-                            <h6 className="text-lg font-bold">Follow Us On</h6>
-                            <ul className="flex flex-row gap-[20px]">
-                                {social.map((item, i) =>(
-                                    <li key={i} className="bg-primary-brown rounded-full size-[30px] flex items-center justify-center"><FontAwesomeIcon icon={item.icon} className="text-base text-white"/></li>
-                                ))}
-                                
-                            </ul>
-                        </div>
-                    </div>
-
-                    
-                </div>
-
-
-                <div className="flex flex-col items-center text-center gap-1.5 ">
-                    {/* <p className='text-md'><strong>We are the Authorized Channel Partner of 'The Clotya Aspire'. <br />
-                    This website is not the official website of developer & property, it belongs to authorized channel partner and it is for the information purpose only. <br />All rights for logo & images are reserved to developer.</strong></p>
-                    <p className='text-md'>Channel Partner RERA Number : Coming Soon</p>
-                    <p className='text-md text-brown font-semibold mt-5'>Project RERA Number : PBRERA-SAS79-PR0777</p> */}
-                    <p className='text-lg font-semibold mt-5 text-brown'>Disclaimer:</p>
-                    <p className='mt-1.5 text-[10px]'> <b>1.</b> The images shown are for illustration purposes only and may not be an exact representation of the product</p>
-                    <p className='mt-1.5 text-[10px]'><b>2.</b> Please be advised that this website is not an official site and serves solely as an informational portal managed by a RERA authorized real estate agent. It does not constitute an offer or guarantee of any services. The prices displayed on this website are subject to change without prior notice, and the availability of properties cannot be guaranteed. The images showcased on this website are for representational purposes only and may not accurately reflect the actual properties. We may share your data with Real Estate Regulatory Authority (RERA) registered Developers for further processing as necessary. Additionally, we may send updates and information to the mobile number or email address registered with us.</p>
-                    <p className='mt-1.5 text-[10px]'><b>3.</b>All rights reserved. The content, design, and information on this website are protected by copyright and other intellectual property rights. Any unauthorized use or reproduction of the content may violate applicable laws.
-                    For accurate and up-to-date information regarding services, pricing, availability, and any other details, it is recommended to contact us directly through the provided contact information on this website. Thank you for visiting our website.</p>
-                    <p className='mt-1.5 text-[10px]'><NavLink to='/terms-conditions' target='_blank' className='text-primary-brown font-semibold'>Terms & Conditions</NavLink> and <NavLink to='/privacy-policy' target='_blank' className='text-primary-brown font-semibold'>Privacy Policy</NavLink></p>
-                    <p className='mt-1.5 text-[10px]'>Crafted By: <NavLink to='https://iosandweb.net/' target='_blank' className='hover:text-primary-brown'>IosAndWeb Technologies</NavLink></p>
+                    ))}
                 </div>
             </div>
-            
-        </footer>
-    )
-}
+            {/* Copyright */}
+            <div className="max-w-7xxl mx-auto px-[15px] border-t border-gray-200">
+  <div className="pt-[40px] pb-[50px] flex flex-col md:flex-row justify-between items-center text-[13px] text-black gap-4">
+    <p className='leading-[1.5]'>Copyright {new Date().getFullYear()} &copy; Clotya. All rights reserved.</p>
+    <ul className="flex flex-wrap text-[13px] text-black divide-x divide-gray-300">
+  {bottomLinks.map((link, i) => (
+    <li key={i} className="px-3 first:pl-0 last:pr-0">
+      <a href="#" className="leading-[1.5]">{link}</a>
+    </li>
+  ))}
+</ul>
 
-export default Footer
+  </div>
+</div>
+
+        </footer>
+    );
+};
+
+export default Footer;

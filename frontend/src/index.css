@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: "Josh";
+  font-family: "Jost";
   src: url('../public/assets/font/Jost-VariableFont_wght.ttf');
 }
 html {
@@ -12,7 +12,7 @@ html {
 body {
   margin: 0;
   position: relative;
-  font-family: 'TT Norms', sans-serif;
+  font-family: 'Jost', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -36,11 +36,11 @@ body {
   }
 }
 code {
-  font-family: 'Helvetica', sans-serif;
+  font-family: 'jost', sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Helvetica', sans-serif;
+  font-family: 'jost', sans-serif;
 }
 .font-norms{
   font-family: 'TT Norms', sans-serif;
@@ -61,6 +61,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 :focus-visible{
   outline: unset;
+}
+.container {
+  max-width: 1290px;
+  padding-left: 0.9375rem;
+    padding-right: 0.9375rem;
 }
 /* Lightbox */
 .yarl__container {

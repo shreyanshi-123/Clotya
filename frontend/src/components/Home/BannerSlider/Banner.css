@@ -180,3 +180,42 @@ header.scrolled.sticky.home-header {
 .BannerScrolled .possession {
     display: none;
 }
+
+.slick-dots li button,.slick-dots li button:before{
+    font-size: 10px;
+}
+
+.slick-dots li{
+    margin: 0px;
+}
+/* Default state */
+.left-animate img {
+    transition: all ease 0.3s;
+  }
+  
+  /* Define the keyframe animation for moving the image back and forth */
+  @keyframes moveRight {
+    0% {
+      transform: translateX(0); /* Start at the original position */
+    }
+    25% {
+      transform: translateX(5px); /* Move 5px to the right */
+    }
+    50% {
+      transform: translateX(0px); /* Return to the original position */
+    }
+    75% {
+      transform: translateX(-5px); /* Move 5px to the left */
+    }
+    100% {
+      transform: translateX(0px); /* Return to the original position */
+    }
+  }
+  
+  /* Trigger the animation to loop when hovering */
+  .left-animate:hover img {
+    animation: moveRight 1s infinite linear; /* Apply the keyframe animation */
+  }
+  
+  
+  

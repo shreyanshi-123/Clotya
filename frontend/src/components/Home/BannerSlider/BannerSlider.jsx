@@ -1,13 +1,13 @@
 import './Banner.css';
 import Slider from "react-slick";
-// import banner1 from "../../../assests/images/slider/banner1.jpeg";
-// import banner2 from "../../../assests/images/slider/banner2.jpeg";
-// import banner3 from "../../../assests/images/slider/banner3.jpeg";
-// import banner4 from "../../../assests/images/slider/banner4.jpeg";
-// import Possession from "../../../assests/images/ribbon-img.png"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHomeLg } from '@fortawesome/free-solid-svg-icons';
+import { faRightLong, faLeftLong } from '@fortawesome/free-solid-svg-icons';
 import { useState, useEffect } from 'react';
+
+const banner1 = ` ${process.env.REACT_APP_API_URL}/assets/images/BannerSlider/slider1.webp`
+const banner2 = ` ${process.env.REACT_APP_API_URL}/assets/images/BannerSlider/slider2.webp`
+const banner3 = ` ${process.env.REACT_APP_API_URL}/assets/images/BannerSlider/slider3.webp`
+const forward = ` ${process.env.REACT_APP_API_URL}/assets/images/BannerSlider/forward.png`
 
 const BannerSlider = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -36,67 +36,75 @@ const BannerSlider = () => {
     autoplaySpeed: 50000,
     dots: true,
     infinite: false,
-    arrows: false,
+    arrows: true,  // Enable arrows
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
     draggable: false,
     pauseOnHover: false,
     lazyLoad: "progressive",
+    prevArrow: (
+      <div className="custom-prev-arrow">
+        <FontAwesomeIcon icon={faLeftLong} />
+      </div>
+    ),
+    nextArrow: (
+      <div className="custom-next-arrow">
+        <FontAwesomeIcon icon={faRightLong} />
+      </div>
+    ),
   };
 
   const slides = [
-    // { image: banner1 },
-    // { image: banner2 },
-    // { image: banner3 },
-    // { image: banner4 },
+    {
+      image: banner1,
+      subtitle: "WINTER 2022 COLLECTION",
+      title: "VALENTIN PAUL ESSENTIAL COLLECTION",
+      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
+      buttonText: "Shop Collection",
+    },
+    {
+      image: banner2,
+      subtitle: "WINTER 2022 COLLECTION",
+      title: "VALENTIN PAUL ESSENTIAL COLLECTION",
+      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
+      buttonText: "Shop Collection",
+    },
+    {
+      image: banner3,
+      subtitle: "WINTER 2022 COLLECTION",
+      title: "VALENTIN PAUL ESSENTIAL COLLECTION",
+      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
+      buttonText: "Shop Collection",
+    },
   ];
 
   return (
     <section className={`overflow-hidden banner-section ${scrolled ? 'BannerScrolled' : ''}`}>
 
-      {/* <div className='possession'>Ready <span>For</span> Possession</div> */}
-
       <Slider {...settings}>
         {slides.map((el, i) => (
-          <div className='banner-wrapper w-full content-center h-screen relative overflow-hidden' key={i}>
+          <div key={i} className='relative w-full h-screen'>
             <img
               src={el.image}
-              alt="The Clotya Aspire - Luxurious Apartments in Zirakpur"
-              className="object-cover bg-img object-center absolute top-0 left-0 right-0 h-full w-full"
+              alt={`Slide ${i + 1}`}
+              className="absolute top-0 left-0 w-full h-full position-center object-cover z-0"
             />
-            <div className='max-w-6xl mr-auto ml-0 flex absolute top-0 left-0 right-0 h-full w-full banner-slider text-white px-2.5 py-3 z-10'>
-              <div className="flex flex-col w-full h-full items-center ">
-                <div md={12} xl={10} className='w-full md:w-4/5 m-auto'>
-                  <div className='flex h-full flex-col gap-4 text-left banner-wrapper'>
-                    <div className="possession-txt gap-4 flex  flex-col justify-center w-fit">
-                    {/* <div className='w-max flex '>  <img src={Possession} alt="" className='w-[280px] sm:w-[380px] md:[490px] lg:w-[527px] ' /></div> */}
-
-                      <h1 className='banner-title text-2xl sm:text-3xl md:text-5xl font-semibold w-fit'>Where Luxury Meets Innovation</h1></div>
-                    <h2 className='banner-sub-title text-lg sm:text-xl md:text-3xl font-medium'>Embrace the Future with Cutting-Edge Design</h2>
-                    <div className='w-72 h-px bg-white mt-8'></div>
-                    <ul className='flex flex-col lg:flex-row gap-4'>
-                      <li className='flex gap-2 items-center text-sm font-semibold'>
-                        <FontAwesomeIcon icon={faHomeLg} /> 3 BHK Apartments
-                      </li>
-                      <li className='flex gap-2 items-center text-sm font-semibold'>
-                        <FontAwesomeIcon icon={faHomeLg} /> 3+1 BHK Apartments
-                      </li>
-                      <li className='flex gap-2 items-center text-sm font-semibold'>
-                        <FontAwesomeIcon icon={faHomeLg} /> 4+1 BHK Apartments
-                      </li>
-                    </ul>
-                  </div>
-                </div>
+            <div className="absolute top-0 left-0 w-full h-full bg-black/25 z-10"></div>
+            <div className="relative z-20 flex items-center justify-center h-full w-full text-center px-4">
+              <div className="text-white max-w-7xxl mx-auto px-[15px]">
+                <h4 className="text-white sm:text-lg md:text-[12px] font-semibold tracking-[1px] uppercase">{el.subtitle}</h4>
+                <h1 className="text-2xl sm:text-4xl md:text-[98px] font-semibold leading-[1.2] uppercase">{el.title}</h1>
+                <p className="text-sm sm:text-lg md:text-[16px] opacity-[0.6]">{el.text}</p>
+                <button className="mt-4 px-6 py-2 text-sm sm:text-white font-semibold flex flex-row gap-2 justify-center w-full text-white rounded  left-animate">
+                  {el.buttonText} <img className='invert ' src={forward} alt="" />
+                </button>
               </div>
             </div>
-            <div className='w-full absolute top-0 h-full' style={{ backgroundColor: "#00000080" }}></div>
-            <p className='text-xs font-semibold p-1 absolute mx-auto bottom-0.5 right-3 text-white w-max'>
-              *Image shown is for illustration purposes only
-            </p>
           </div>
         ))}
       </Slider>
+
     </section>
   );
 };

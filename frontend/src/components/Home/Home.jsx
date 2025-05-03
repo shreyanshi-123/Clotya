@@ -1,7 +1,7 @@
 import MetaData from "../Layout/MetaData"
 // import AboutUs from "./AboutUs/AboutUs"
 // import Amenities from "./Amenities/Amenities"
-// import BannerSlider from "./BannerSlider/BannerSlider"
+import BannerSlider from "./BannerSlider/BannerSlider"
 // import ContactUs from "./ContactUs/ContactUs"
 // import FloorPlan from "./FloorPlan/FloorPlan"
 // import Gallery from "./Gallery/Gallery"
@@ -19,8 +19,8 @@ const Home = () => {
                 canonicalUrl={process.env.REACT_APP_API_URL}
             />
 
-            {/* <BannerSlider />
-            <ListSection />
+            <BannerSlider />
+          {/*   <ListSection />
             <AboutUs />
             <FloorPlan />
             <SmartLiving />
