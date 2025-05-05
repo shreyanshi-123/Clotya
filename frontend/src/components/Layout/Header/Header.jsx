@@ -30,6 +30,7 @@ const MenMegaMenu1 = `${process.env.REACT_APP_API_URL}/assets/images/dropdowns/m
 const MenMegaMenu2 = `${process.env.REACT_APP_API_URL}/assets/images/dropdowns/megamenu-4.jpg`;
 const MenMegaMenu3 = `${process.env.REACT_APP_API_URL}/assets/images/dropdowns/megamenu-44.jpg`;
 const MenMegaMenu4 = `${process.env.REACT_APP_API_URL}/assets/images/dropdowns/megamenu-45.jpg`;
+const MenMegaMenu5 = `${process.env.REACT_APP_API_URL}/assets/images/dropdowns/megamenu-2.jpg`;
 const arrow = `${process.env.REACT_APP_API_URL}/assets/images/dropdowns/arrow-right.png`;
 
 
@@ -336,7 +337,7 @@ const Header = () => {
                     MEN
                     <FontAwesomeIcon icon={faAngleDown} className="text-xs ml-1" />
                   </a>
-                  <div className="absolute w-full left-0 right-0 h-[auto] hidden group-hover:flex gap-10 bg-white text-black mt-4   shadow-lg z-50">
+                  <div className="absolute flex-col w-full left-0 right-0 h-[auto] hidden group-hover:flex gap-10 bg-white text-black mt-4   shadow-lg z-50">
                     <div className="max-w-7xxl w-full mx-auto px-[15px] justify-center flex" >
                       <div className='flex gap-[30px] w-full' >
                         <div className="w-[60%] pr-[50px] py-[50px]">
@@ -389,7 +390,13 @@ const Header = () => {
                         </div>
                         <div className="w-[40%] h-[273px] dropdown-mega3" style={{ backgroundImage: `url(${MenMegaMenu})` }}></div>
                       </div>
+                     
                     </div >
+                    <div className="second-part w-full flex gap-[30px] h-[340px]" style={{ backgroundImage: `url(${MenMegaMenu5})` }}>
+                      <div className="columns w-1/2"></div>
+                      <div className="columns w-1/2"><h2 class="text-white font-medium text-[40px] leading-[1.4] mb-[30px]">The latest men's trends <br/>
+                      this season</h2></div>
+                    </div>
                   </div >
                 </div>
                 <div className=" group">
