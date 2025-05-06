@@ -1,4 +1,5 @@
 import React from 'react';
+import Newsletter from './newsletter'
 
 const Logo = `${process.env.REACT_APP_API_URL}/assets/images/logo-white.webp`;
 
@@ -30,6 +31,7 @@ const bottomLinks = ['Privacy Policy', 'Terms and Conditions', 'Returns Policy']
 const Footer = () => {
     return (
         <footer className="bg-white text-black text-sm">
+            <Newsletter/>
             <div className="max-w-7xxl mx-auto px-[15px]">
                 <div className=" px-0 py-[60px] mx-auto  flex flex-col md:flex-row flex-wrap gap-y-10 md:gap-y-0">
 

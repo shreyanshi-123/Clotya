@@ -311,7 +311,7 @@ const Header = () => {
                       />
                     </NavLink>
                     <button
-                      className="text-black text-xl lg:hidden mr-4 relative text-end w-full"
+                      className="text-black text-xl  mr-4 relative text-end w-full"
                       onClick={() => setMenuOpen(false)}  // Toggle menu visibility
                     >
                       {/* Font Awesome icon changes based on menuOpen state */}
@@ -853,7 +853,7 @@ const Header = () => {
                             </div>
                             <div className="wrapper-shop-header pt-5">
                               <h3 className='text-[15px] mb-2'><a href="">Textured vegan leather moto Jacket</a></h3>
-                              <div className="mb-2 text-[15px]">$693.00–$699.00</div></div>
+                              <div className="mb-2 text-[15px] ">$693.00–$699.00</div></div>
                             <div className="available-color items-center p-1 flex gap-3">
                               <div className="firstcolor bg-[#000] h-[23px] w-[23px] rounded-[50%] relative flex items-center justify-center"><FontAwesomeIcon icon={faCheck} className='text-white text-[8px] font-medium ' /></div>
                               <div className="firstcolor bg-[#D9121F] h-[23px] w-[23px] rounded-[50%] relative flex items-center justify-center"><FontAwesomeIcon icon={faCheck} className='text-white text-[8px] font-medium ' /></div>
@@ -920,7 +920,7 @@ const Header = () => {
                     size="lg"
                   />
                 ))}
-                <span className='text-black lg:text-white text-[13px]'>$24.90</span>
+                <span className='text-black lg:text-white text-[13px] CartAmount'>$24.90</span>
 
                 <FontAwesomeIcon
 
