@@ -94,7 +94,7 @@ const BannerSlider = () => {
             <div className="relative z-20 flex items-center justify-center h-full w-full text-center px-4">
               <div className="text-white max-w-7xxl mx-auto px-[15px]">
                 <h4 className="text-white sm:text-lg md:text-[12px] font-semibold tracking-[1px] uppercase">{el.subtitle}</h4>
-                <h1 className="text-2xl sm:text-4xl md:text-[98px] font-semibold leading-[1.2] uppercase">{el.title}</h1>
+                <h1 className="text-2xl sm:text-4xl md:text-[80px] xl:text-[98px] font-semibold leading-[1.2] uppercase">{el.title}</h1>
                 <p className="text-sm sm:text-lg md:text-[16px] opacity-[0.6]">{el.text}</p>
                 <button className="mt-4 px-6 py-2 text-sm sm:text-white font-semibold flex flex-row gap-2 justify-center w-full text-white rounded  left-animate">
                   {el.buttonText} <img className='invert ' src={forward} alt="" />

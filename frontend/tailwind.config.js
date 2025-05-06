@@ -551,6 +551,7 @@ module.exports = {
       '4xl': '56rem',
       '5xl': '1080px',
       '6xl': '72rem',
+      '6xxl': '78rem',
       '7xl': '80rem',
       '7xxl': '1290px',
       '8xl': '1320px',
