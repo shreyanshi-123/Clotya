@@ -80,7 +80,13 @@ const BannerSlider = () => {
       buttonText: "Shop Collection",
     },
   ];
-
+  // slider animation
+  // banner text
+  // footer at 320
+  // spacing in footer in responsive
+  // border in cart
+  // nuber overlapping in header
+  // hover pe drop down close in header
   return (
     <section className={`overflow-hidden banner-section ${scrolled ? 'BannerScrolled' : ''}`}>
 
