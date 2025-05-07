@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+// import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Accordion from 'react-bootstrap/Accordion';
 import SideMenu from './SideMenu'
@@ -40,7 +41,7 @@ const MenMegaMenu4 = `${process.env.REACT_APP_API_URL}/assets/images/dropdowns/m
 const MenMegaMenu5 = `${process.env.REACT_APP_API_URL}/assets/images/dropdowns/megamenu-2.jpg`;
 const arrow = `${process.env.REACT_APP_API_URL}/assets/images/dropdowns/arrow-right.png`;
 
-
+const ShoppingBag = `${process.env.REACT_APP_API_URL}/assets/images/shopping-bag.png`;
 
 // Menu Data
 
@@ -253,19 +254,7 @@ const category = [
   }
 ]
 
-const iconItems = [
-  { icon: faUser, hover: 'hover:text-green-500', key: 'admin' },
-  { icon: faSearch, hover: 'hover:text-gray-500', key: 'search' },
-  { icon: faHeart, hover: 'hover:text-red-500', key: 'wishlist' },
 
-
-];
-
-// const iconItemsLast  = [
-
-//   { icon: faBagShopping, hover: 'hover:text-blue-500', key: 'cart' },
-
-// ];
 
 
 const Header = () => {
@@ -276,162 +265,181 @@ const Header = () => {
     setIsOpen(!isOpen);
   };
 
+
+  
+  // const cartRef = useRef(null);
+
+  // // Close dropdown when clicking outside
+  // useEffect(() => {
+  //   function handleClickOutside(event) {
+  //     if (cartRef.current && !cartRef.current.contains(event.target))      {
+  //       setIsOpen(false);
+  //     }
+  //   }
+
+  //   document.addEventListener("mousedown", handleClickOutside);
+  //   return () => {
+  //     document.removeEventListener("mousedown", handleClickOutside);
+  //   };
+  // }, [cartRef]);
   return (
     <header className="relative z-50">
       {/* Promo Bar */}
 
       {/* Navigation Bar */}
-      <div className=" text-white absolute w-full">
+      <div className="navigation text-white absolute w-full">
         <div className="bg-black text-white text-[12px] text-center relative py-2.5">
           <div class="container  m-auto">
             <p className='text-[12px] uppercase tracking-[0.25px]'>SUMMER SALE FOR ALL SWIM SUITS AND FREE EXPRESS INTERNATIONAL DELIVERY - OFF 50%! <a href="/shop" className='font-semibold'>SHOP NOW</a></p>
           </div>
-        </div>
-        <div className="max-w-7xxl mx-auto px-[15px]  flex items-center header-wrapper ">
-          <div className="border-b-[1px] border-primary-gray border-solid flex w-full justify-between  items-center main-header ">
-            {/* Left: Hamburger (Mobile) & Menu */}
-            <div className="flex items-center ">
-              {/* Mobile Menu Button */}
-              <button
-                className="text-white text-xl lg:hidden mr-4 relative"
-                onClick={() => setMenuOpen(!menuOpen)}  // Toggle menu visibility
-              >
-                {/* Font Awesome icon changes based on menuOpen state */}
-                <FontAwesomeIcon icon={menuOpen ? faTimes : faBars} className="text-black" />
-              </button>
-              <div className={`dropdown-menu   left-0 ${menuOpen ? 'open' : ''}`}>
-                <div className={`sidebar ${menuOpen ? 'open' : ''}`}>
-                  <div className="flex px-[24px] pt-[20px] pb-[12px]">
-                    <NavLink to="/" className="block w-auto">
-                      <LazyLoadImage
-                        src={Logo}
-                        alt="Clotya"
-                        // width="121"
-                        className="invert"
-                      />
-                    </NavLink>
-                    <button
-                      className="text-black text-xl  mr-4 relative text-end w-full"
-                      onClick={() => setMenuOpen(false)}  // Toggle menu visibility
-                    >
-                      {/* Font Awesome icon changes based on menuOpen state */}
-                      <FontAwesomeIcon icon={faTimes} className="text-black" />
-                    </button></div>
-                  <div className="px-[24px] py-[12px]">
-                    {/* <Accordion defaultActiveKey="0"> */}
-                    {/* <ul> */}
-                    <Accordion defaultActiveKey="0">
-  {/* Shop Section */}
-  <Accordion.Item eventKey="0">
-    <Accordion.Header>
-      <h3 className="hover:text-primary-red text-[16px] py-[8px]">
-        Shop 
-      </h3>
-    </Accordion.Header>
-    <Accordion.Body>
-      <Accordion >
-        {/* Men Section */}
-        <Accordion.Item eventKey="1">
-          <Accordion.Header>
-            <h3 className="hover:text-primary-red text-[16px] py-[8px]">
-              Men
-            </h3>
-          </Accordion.Header>
-          <Accordion.Body>
-           
-              {row1.concat(row2).map(({ id, item }) => (
-                <li key={id}>{item}</li>
-              ))}
-            
-          </Accordion.Body>
-        </Accordion.Item>
+        </div >
+        <div className="px-[0px] lg:px-[15px]">
+          <div className="max-w-7xxl mx-auto  px-[15px] lg:px-[0px]  flex items-center header-wrapper ">
+            <div className="border-b-[1px] border-primary-gray border-solid flex w-full justify-between  items-center main-header ">
+              {/* Left: Hamburger (Mobile) & Menu */}
+              <div className="flex items-center ">
+                {/* Mobile Menu Button */}
+                <button
+                  className="text-white text-xl lg:hidden mr-4 relative"
+                  onClick={() => setMenuOpen(!menuOpen)}  // Toggle menu visibility
+                >
+                  {/* Font Awesome icon changes based on menuOpen state */}
+                  <FontAwesomeIcon icon={menuOpen ? faTimes : faBars} className="text-black" />
+                </button>
+                <div className={`dropdown-menu   left-0 ${menuOpen ? 'open' : ''}`}>
+                  <div className={`sidebar ${menuOpen ? 'open' : ''}`}>
+                    <div className="flex px-[24px] pt-[20px] justify-between pb-[12px]">
+                      <NavLink to="/" className="block w-auto  slider-logo flex items-center">
+                        <LazyLoadImage
+                          src={Logo}
+                          alt="Clotya"
+                         
+                          className="invert w-[112px]  "
+                        />
+                      </NavLink>
+                      <button
+                        className="text-black flex justify-center items-center  text-xl bg-[#e8e9ef] w-[30px] h-[30px] relative text-end w-full"
+                        onClick={() => setMenuOpen(false)}  // Toggle menu visibility
+                      >
+                        {/* Font Awesome icon changes based on menuOpen state */}
+                        <FontAwesomeIcon icon={faTimes} className="text-black font-[14px] font-semibold" />
+                      </button></div>
+                    <div className="px-[24px] py-[12px]">
+                      {/* <Accordion defaultActiveKey="0"> */}
+                      {/* <ul> */}
+                      <Accordion defaultActiveKey="0">
+                        {/* Shop Section */}
+                        <Accordion.Item eventKey="0">
+                          <Accordion.Header>
+                            
+                           <a href="#" className='text-black hover:text-primary-red'><h3 className=" text-black text-[16px] py-[8px] leading-[1.5]">
+                              Shop
+                            </h3></a>
+                          </Accordion.Header>
+                          <Accordion.Body>
+                            <Accordion >
+                              {/* Men Section */}
+                              <Accordion.Item eventKey="1">
+                                <Accordion.Header>
+                                <a href="#" className='text-black hover:text-primary-red'><h3 className=" text-black text-[15px] py-[4px] leading-[1.5]">
+                              Men
+                            </h3></a>
+                                </Accordion.Header>
+                                <Accordion.Body>
 
-        {/* Women Section */}
-        <Accordion.Item eventKey="2">
-          <Accordion.Header>
-            <h3 className="hover:text-primary-red text-[16px] py-[8px]">
-              Women 
-            </h3>
-          </Accordion.Header>
-          <Accordion.Body>
-           
-              {row11.concat(row22).map(({ id, item }) => (
-                <li key={id}>{item}</li>
-              ))}
-           
-          </Accordion.Body>
-        </Accordion.Item>
+                                  {row1.concat(row2).map(({ id, item }) => (
+                                 <a href="#" className='text-black hover:text-primary-red'>   <li key={id} className='text-black text-[15px] py-[4px] leading-[1.5]'>{item}</li></a>
+                                  ))}
 
-        {/* Others Section */}
-        <Accordion.Item eventKey="3">
-          <Accordion.Header>
-            <h3 className="hover:text-primary-red text-[16px] py-[8px]">
-              Others 
-            </h3>
-          </Accordion.Header>
-          <Accordion.Body>
-            
-              {row111.concat(row222).map(({ id, item }) => (
-                <li key={id}>{item}</li>
-              ))}
-           
-          </Accordion.Body>
-        </Accordion.Item>
-      </Accordion>
-    </Accordion.Body>
-  </Accordion.Item>
+                                </Accordion.Body>
+                              </Accordion.Item>
 
-  {/* Category Section */}
-  <Accordion.Item eventKey="4">
-    <Accordion.Header>
-      <h3 className="hover:text-primary-red text-[16px] py-[8px]">
-        Category 
-      </h3>
-    </Accordion.Header>
-    <Accordion.Body>
-      
-        {category.map(({ id, item }) => (
-          <li key={id}>{item}</li>
-        ))}
-      
-    </Accordion.Body>
-  </Accordion.Item>
+                              {/* Women Section */}
+                              <Accordion.Item eventKey="2">
+                                <Accordion.Header>
+                                <a href="#" className='text-black hover:text-primary-red'><h3 className=" text-black text-[15px] py-[4px] leading-[1.5]">
+                             Women
+                            </h3></a>
+                                </Accordion.Header>
+                                <Accordion.Body>
 
-  {/* Repeating Men, Women Sections */}
-  <Accordion.Item eventKey="5">
-    <Accordion.Header>
-      <h3 className="hover:text-primary-red text-[16px] py-[8px]">
-        Men 
-      </h3>
-    </Accordion.Header>
-    <Accordion.Body>
-      
-        {category.map(({ id, item }) => (
-          <li key={id}>{item}</li>
-        ))}
-      
-    </Accordion.Body>
-  </Accordion.Item>
+                                  {row11.concat(row22).map(({ id, item }) => (
+                                 <a href="#" className='text-black hover:text-primary-red'>   <li key={id} className='text-black text-[15px] py-[4px] leading-[1.5]'>{item}</li></a>
+                                  ))}
 
-  <Accordion.Item eventKey="6">
-    <Accordion.Header>
-      <h3 className="hover:text-primary-red text-[16px] py-[8px]">
-        Women 
-      </h3>
-    </Accordion.Header>
-    <Accordion.Body>
-      
-        {category.map(({ id, item }) => (
-          <li key={id}>{item}</li>
-        ))}
-     
-    </Accordion.Body>
-  </Accordion.Item>
-</Accordion>
+                                </Accordion.Body>
+                              </Accordion.Item>
 
-                        {/* </ul> */}
+                              {/* Others Section */}
+                              <Accordion.Item eventKey="3">
+                                <Accordion.Header>
+                                <a href="#" className='text-black hover:text-primary-red'><h3 className=" text-black text-[15px] py-[4px] leading-[1.5]">
+                              Others
+                            </h3></a>
+                                </Accordion.Header>
+                                <Accordion.Body>
 
-                      </div>
+                                  {row111.concat(row222).map(({ id, item }) => (
+                                   <a href="#" className='text-black hover:text-primary-red'> <li key={id} className='text-black text-[15px] py-[4px] leading-[1.5]'>{item}</li></a>
+                                  ))}
+
+                                </Accordion.Body>
+                              </Accordion.Item>
+                            </Accordion>
+                          </Accordion.Body>
+                        </Accordion.Item>
+
+                        {/* Category Section */}
+                        <Accordion.Item eventKey="4">
+                          <Accordion.Header>
+                          <a href="#" className='text-black hover:text-primary-red'><h3 className=" text-black text-[16px] py-[8px] leading-[1.5]">
+                             Category
+                            </h3></a>
+                          </Accordion.Header>
+                          <Accordion.Body>
+
+                            {category.map(({ id, item }) => (
+                          <a href="#" className='text-black hover:text-primary-red'>    <li key={id} className='text-black text-[15px] py-[4px] leading-[1.5]'>{item}</li></a> 
+                            ))}
+
+                          </Accordion.Body>
+                        </Accordion.Item>
+
+                        {/* Repeating Men, Women Sections */}
+                        <Accordion.Item eventKey="5">
+                          <Accordion.Header>
+                          <a href="#" className='text-black hover:text-primary-red'><h3 className=" text-black text-[16px] py-[8px] leading-[1.5]">
+                             Men
+                            </h3></a>
+                          </Accordion.Header>
+                          <Accordion.Body>
+
+                            {category.map(({ id, item }) => (
+                            <a href="#" className='text-black hover:text-primary-red'>   <li key={id} className='text-black text-[15px] py-[4px] leading-[1.5]'>{item}</li></a>
+                            ))}
+
+                          </Accordion.Body>
+                        </Accordion.Item>
+
+                        <Accordion.Item eventKey="6">
+                          <Accordion.Header>
+                          <a href="#" className='text-black hover:text-primary-red'><h3 className=" text-black text-[16px] py-[8px] leading-[1.5]">
+                             Women
+                            </h3></a>
+                          </Accordion.Header>
+                          <Accordion.Body>
+
+                            {category.map(({ id, item }) => (
+                              <li key={id} className='text-black text-[15px] py-[4px] leading-[1.5]'>{item}</li>
+                            ))}
+
+                          </Accordion.Body>
+                        </Accordion.Item>
+                      </Accordion>
+
+                      {/* </ul> */}
+
+                    </div>
                   </div>
                 </div>
 
@@ -445,7 +453,7 @@ const Header = () => {
                       <FontAwesomeIcon icon={faAngleDown} className="text-xs ml-1" />
                     </a>
 
-                    <div className="absolute justify-center top-[100px] w-full left-0 right-0 h-[auto] hidden group-hover:flex  bg-white text-black mt-4 py-[50px] shadow-lg z-50">
+                    <div className="absolute justify-center top-[94px] w-full left-0 right-0 h-[auto] hidden group-hover:flex  bg-white text-black mt-4 py-[50px] shadow-lg z-50">
                       <div className="max-w-7xxl w-full mx-auto px-[15px] flex">
                         {/* ================================================================== */}
                         <div className='w-1/3' >
@@ -740,9 +748,9 @@ const Header = () => {
                         <div className="columns w-1/2"></div>
                         <div className="columns w-1/2 flex items-center">
                           <div className='flex flex-col'>
-                            <div className="part-two mb-5"><h2 class="text-white font-medium text-[40px] leading-[1] mb-[30px]">The latest men's trends <br />
+                            <div className="part-two mb-[20px]"><h2 class="text-white font-medium text-[40px] leading-[1] mb-[30px]">The latest men's trends <br />
                               this season</h2>
-                              <p className='text-[22px] mb-5 text-white leading-[1]'>New collections!</p></div>
+                              <p className='text-[22px] mb-[20px] text-white leading-[1]'>New collections!</p></div>
                             <div>  <button className='py-2 px-10 rounded-[40px] border-1 border-primary-red hover:bg-white hover:text-primary-red font-medium text-[20px] hover:border-primary-red bg-primary-red shop-now text-white leading-[1.4]'>Shop now</button></div>
                           </div>
                         </div>
@@ -761,40 +769,40 @@ const Header = () => {
                         <div className="w-[42%] py-[50px] dropdown-mega4" style={{ backgroundImage: `url(${MenMegaMenu1})` }}>
                           <h4 className="font-semibold text-[#808080] text-[14px] mb-[25px] leading-[1.4]">Women</h4>
                           <div className="grid">
-                            <ul className="space-y-1 text-[17px] pt-[5px]">
-                              <li >
+                            <ul className="space-y-1 text-[17px] flex flex-col">
+                              <li className='m-0 leading-[1.6] py-[2.5px]'>
                                 <a href="#" className=" py-[5px]  font-medium pr-[30px] hover:text-primary-red">Dresses</a>
                               </li>
-                              <li >
+                              <li className='m-0 leading-[1.6] py-[2.5px]'>
                                 <a href="#" className="  py-[5px]  font-medium pr-[30px]">Jackets & Coats</a>
                               </li>
-                              <li >
+                              <li className='m-0 leading-[1.6] py-[2.5px]'>
                                 <a href="#" className="  py-[5px]  font-medium pr-[30px] hover:text-primary-red">Jeans</a>
                               </li>
-                              <li >
+                              <li className='m-0 leading-[1.6] py-[2.5px]'>
                                 <a href="#" className=" py-[5px]  font-medium pr-[30px] hover:text-primary-red">Lingerie</a>
                               </li>
 
-                              <li >
+                              <li className='m-0 leading-[1.6] py-[2.5px]'>
                                 <a href="#" className=" py-[5px]  font-medium pr-[30px] hover:text-primary-red">Loungewear</a>
                               </li>
-                              <li >
+                              <li className='m-0 leading-[1.6] py-[2.5px]'>
                                 <a href="#" className=" py-[5px]  font-medium pr-[30px] hover:text-primary-red">Shorts</a>
                               </li>
-                              <li >
+                              <li className='m-0 leading-[1.6] py-[2.5px]'>
                                 <a href="#" className=" py-[5px]  font-medium pr-[30px] hover:text-primary-red">Skirts</a>
                               </li>
-                              <li >
+                              <li className='m-0 leading-[1.6] py-[2.5px]'>
                                 <a href="#" className=" py-[5px]  font-medium pr-[30px] hover:text-primary-red">Suits</a>
                               </li>
 
-                              <li >
+                              <li className='m-0 leading-[1.6] py-[2.5px]'>
                                 <a href="#" className=" py-[5px]  font-medium pr-[30px] hover:text-primary-red">Swimwear</a>
                               </li>
-                              <li >
+                              <li className='m-0 leading-[1.6] py-[2.5px]'>
                                 <a href="#" className=" py-[5px]  font-medium pr-[30px] hover:text-primary-red">Top</a>
                               </li>
-                              <li >
+                              <li className='m-0 leading-[1.6] py-[2.5px]'>
                                 <a href="#" className=" py-[5px]  font-medium pr-[30px] hover:text-primary-red">Trousers</a>
                               </li>
 
@@ -810,7 +818,7 @@ const Header = () => {
                                 <h2 className='text-[30px] text-white font-medium leading-[1.2] mb-5'>Street style <br />
                                   has its own <br />
                                   rules</h2>
-                                <div className=""><div className="flex gap-2 text-[18.7px] font-medium text-white wrapper-btn"><div className="btn-content">Shop Now</div> <img src={arrow} alt="" className='invert' /></div></div>
+                              <a href="">  <div className=""><div className="flex gap-2 text-[18.7px] font-medium text-white wrapper-btn"><div className="btn-content">Shop Now</div> <img src={arrow} alt="" className='invert' /></div></div></a>
                               </div>
                             </div>
                           </div>
@@ -848,11 +856,11 @@ const Header = () => {
                                   </a>
                                   <span class="ts-tooltip button-tooltip">Wishlist</span>
                                 </div>
-                                <div class="loop-add-to-cart py-[7.5px] px-[10px] bg-black text-white text-center font-medium hover:bg-primary-red"><a href="/"><span class="ts-tooltip  text-[18px] leading-[1.4] font-medium">Select options</span></a></div>
+                                <a href="/"> <div class="loop-add-to-cart py-[7.5px] px-[10px] bg-black text-white text-center font-medium hover:bg-primary-red"><span class="ts-tooltip  text-[18px] leading-[1.4] font-medium">Select options</span></div></a>
                               </div>
                             </div>
-                            <div className="wrapper-shop-header pt-5">
-                              <h3 className='text-[15px] mb-2'><a href="">Textured vegan leather moto Jacket</a></h3>
+                            <div className="wrapper-shop-header pt-[20px]">
+                              <h3 className='text-[15px] mb-2'><a href="" className='hover:text-primary-red'>Textured vegan leather moto Jacket</a></h3>
                               <div className="mb-2 text-[15px] ">$693.00–$699.00</div></div>
                             <div className="available-color items-center p-1 flex gap-3">
                               <div className="firstcolor bg-[#000] h-[23px] w-[23px] rounded-[50%] relative flex items-center justify-center"><FontAwesomeIcon icon={faCheck} className='text-white text-[8px] font-medium ' /></div>
@@ -864,37 +872,8 @@ const Header = () => {
                     </div>
                   </div>
                 </nav>
-                {/* Submenu Dropdown */}
+               
 
-                {/* <div className="absolute  hidden group-hover:block bg-white text-black mt-2 rounded shadow-lg p-2 z-50 min-w-[150px]">
-                     
-                        <a  href="#" className="block px-3 py-1 hover:bg-gray-100 text-sm">
-                          sub
-                        </a>
-                     
-                    </div> */}
-
-
-                {/* Mega Menu Dropdown */}
-
-                {/* <div className="absolute w-full left-0 right-0 h-[auto] hidden group-hover:flex gap-10 bg-white text-black mt-4 p-6  shadow-lg z-50">
-
-                <div >
-                  <h4 className="font-semibold text-sm mb-2">Title</h4>
-                  <div className="grid grid-cols-3 gap-4">
-                    <ul className="space-y-1 text-sm">
-                      <li >
-                        <a href="#" className="hover:text-blue-600">item</a>
-                      </li>
-                    </ul>
-                  </div>
-                  <ul className="space-y-1 text-sm">
-                    <li >
-                      <a href="#" className="hover:text-blue-600">sub</a>
-                    </li>
-                  </ul>
-                </div>
-              </div> */}
               </div>
 
 
@@ -911,57 +890,68 @@ const Header = () => {
               </div>
 
               {/* Right: Icons */}
-              <div className="flex items-center gap-6 right-icons">
-                {iconItems.map(({ icon, hover, key }) => (
+              <div className="flex items-center  right-icons relative ">
+                <div className="h-[36px] w-[32px] flex justify-center items-center user-btn">
                   <FontAwesomeIcon
-                    key={key}
-                    icon={icon}
+
+                    icon={faUser}
+                    className={`text-white  cursor-pointer`}
+                    size="lg"
+                  /></div>
+                <div className="h-[36px] w-[32px]  flex justify-center items-center ml-2.5 search-btn">
+                  <FontAwesomeIcon
+
+                    icon={faSearch}
+                    className={`text-white  cursor-pointer`}
+                    size="lg"
+                  /></div>
+                <div className="h-[36px] w-[32px]  flex justify-center items-center ml-2.5 heart-btn relative" >
+                  <FontAwesomeIcon
+
+                    icon={faHeart}
                     className={`text-white  cursor-pointer`}
                     size="lg"
                   />
-                ))}
-                <span className='text-black lg:text-white text-[13px] CartAmount'>$24.90</span>
+                  <span class="count klbwl-wishlist-count absolute bg-primary-red text-white font-semibold text-[10px] rounded-[50%] top-0 right-[-2px] min-h-[15px] min-w-[15px] py-[2px] flex items-center justify-center">0</span>
 
-                <FontAwesomeIcon
+                </div>
+                <div className='header-button'>
+                <a href="#" className=''>
+                  <div className='flex  ml-2.5 cart-btn ' >
+                    <span className='text-black lg:text-white text-[13px] CartAmount'>$24.90</span>
+                    <div className="relative h-[36px] w-[32px] justify-center flex items-center">
+                      <FontAwesomeIcon
 
-                  icon={faShoppingBag}
-                  className={`text-white  cursor-pointer`}
-                  size="lg"
-                />
+                        icon={faShoppingBag}
+                        className={`text-white  cursor-pointer`}
+                        size="lg"
+                      />
+                      <span class="count klbwl-wishlist-count absolute bg-primary-red text-white font-semibold text-[10px] rounded-[50%] top-0 right-[0px] min-h-[15px] min-w-[15px] py-[2px] flex items-center justify-center">0</span>
+                    </div>
+                  </div>
+                </a>
+                <div class="cart-dropdown ">
+                  <div class="cart-dropdown-wrapper">
+                    <div class="fl-mini-cart-content">
+
+
+                      <div class="cart-empty">
+                        <div class="empty-icon">
+                          <img src={ShoppingBag} alt="" />
+                        </div>
+                        <div class="empty-text">No products in the cart.</div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+                </div>
 
               </div> </div>
-          </div>
-        </div>
-        {/* </div> */}
-        {/* Mobile Menu */}
-        {
-          // menuOpen && (
-          //   <div className="lg:hidden bg-gray-800 text-white px-4 py-4 space-y-4">
-          //     {menuItems.map((item, index) => (
-          //       <div key={index}>
-          //         <p className="uppercase font-semibold mb-1">{item.name}</p>
-          //         {item.subItems && (
-          //           <ul className="space-y-1 text-sm pl-2">
-          //             {item.subItems.map((sub, i) => (
-          //               <li key={i}><a href="#" className="block">{sub}</a></li>
-          //             ))}
-          //           </ul>
-          //         )}
-          //         {item.megaMenu && item.megaMenu.map((section, secIndex) => (
-          //           <div key={secIndex} className="pl-2 mb-2">
-          //             <p className="text-sm font-medium">{section.title}</p>
-          //             <ul className="text-sm space-y-1 pl-2">
-          //               {section.items.map((sub, j) => (
-          //                 <li key={j}><a href="#" className="block">{sub}</a></li>
-          //               ))}
-          //             </ul>
-          //           </div>
-          //         ))}
-          //       </div>
-          //     ))}
-          //   </div>
-          // )
-        }
+          </div></div>
+      </div>
+      {/* </div> */}
+     
     </header >
   );
 };

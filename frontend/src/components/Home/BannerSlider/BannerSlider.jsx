@@ -1,13 +1,15 @@
 import './Banner.css';
 import Slider from "react-slick";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faRightLong, faLeftLong } from '@fortawesome/free-solid-svg-icons';
+import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import { useState, useEffect } from 'react';
 
 const banner1 = ` ${process.env.REACT_APP_API_URL}/assets/images/BannerSlider/slider1.webp`
 const banner2 = ` ${process.env.REACT_APP_API_URL}/assets/images/BannerSlider/slider2.webp`
 const banner3 = ` ${process.env.REACT_APP_API_URL}/assets/images/BannerSlider/slider3.webp`
 const forward = ` ${process.env.REACT_APP_API_URL}/assets/images/BannerSlider/forward.png`
+const AngleLeft = ` ${process.env.REACT_APP_API_URL}/assets/images/angle-left.png`
+const AngleRight = ` ${process.env.REACT_APP_API_URL}/assets/images/right-arrow-angle.png`
 
 const BannerSlider = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -35,8 +37,8 @@ const BannerSlider = () => {
     autoplay: false,
     autoplaySpeed: 50000,
     dots: true,
-    infinite: false,
-    arrows: true,  // Enable arrows
+    infinite: true,
+    arrows: true,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -45,12 +47,12 @@ const BannerSlider = () => {
     lazyLoad: "progressive",
     prevArrow: (
       <div className="custom-prev-arrow">
-        <FontAwesomeIcon icon={faLeftLong} />
+        <img src={AngleLeft} alt="" />
       </div>
     ),
     nextArrow: (
       <div className="custom-next-arrow">
-        <FontAwesomeIcon icon={faRightLong} />
+        <img src={AngleRight} alt="" />
       </div>
     ),
   };
@@ -84,7 +86,8 @@ const BannerSlider = () => {
 
       <Slider {...settings}>
         {slides.map((el, i) => (
-          <div key={i} className='relative w-full h-screen'>
+          <div key={i} className='relative w-full h-screen banner-wrap'>
+
             <img
               src={el.image}
               alt={`Slide ${i + 1}`}
@@ -93,8 +96,8 @@ const BannerSlider = () => {
             <div className="absolute top-0 left-0 w-full h-full bg-black/25 z-10"></div>
             <div className="relative z-20 flex items-center justify-center h-full w-full text-center px-4">
               <div className="text-white max-w-7xxl mx-auto px-[15px]">
-                <h4 className="text-white sm:text-lg md:text-[12px] font-semibold tracking-[1px] uppercase">{el.subtitle}</h4>
-                <h1 className="text-2xl sm:text-4xl md:text-[80px] xl:text-[98px] font-semibold leading-[1.2] uppercase">{el.title}</h1>
+                <h4 className="text-white text-[10px] md:text-[12px] font-semibold tracking-[1px] uppercase">{el.subtitle}</h4>
+                <h1 className="text-2xl sm:text-[50px] md:text-[66px] font-[500] sm:font-[300]  lg:text-[77px] xl:text-[98px] lg:font-semibold leading-[1.2] uppercase">{el.title}</h1>
                 <p className="text-sm sm:text-lg md:text-[16px] opacity-[0.6]">{el.text}</p>
                 <button className="mt-4 px-6 py-2 text-sm sm:text-white font-semibold flex flex-row gap-2 justify-center w-full text-white rounded  left-animate">
                   {el.buttonText} <img className='invert ' src={forward} alt="" />

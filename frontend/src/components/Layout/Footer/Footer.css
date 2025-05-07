@@ -9,3 +9,7 @@
 .text-brown {
     color: rgb(143 100 69);
 }
+.shop-now:hover {
+    color: #ee403d!important;
+}
+
