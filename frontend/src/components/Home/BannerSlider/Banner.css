@@ -230,22 +230,22 @@ header.scrolled.sticky.home-header {
 }
 
 /* Trigger the animation to loop when hovering */
-.left-animate:hover img {
+.banner-section .left-animate:hover img {
     animation: moveRight 1s infinite linear;
     /* Apply the keyframe animation */
 }
 
 /* banner slider arrow */
 
-.slick-arrow.slick-next {
+.banner-section .slick-arrow.slick-next {
     right: 0;
 }
 
-.slick-arrow.slick-prev {
+.banner-section .slick-arrow.slick-prev {
     left: 0;
     z-index: 9;
 }
-.slick-prev:before, .slick-next:before {
+.banner-section .slick-prev:before, .slick-next:before {
     font-size: 34px;
     opacity: 1;
     background: #fff;
@@ -274,3 +274,4 @@ header.scrolled.sticky.home-header {
        
     }
 }
+

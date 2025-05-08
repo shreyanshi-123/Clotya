@@ -86,7 +86,7 @@ const BannerSlider = () => {
 
       <Slider {...settings}>
         {slides.map((el, i) => (
-          <div key={i} className='relative w-full h-screen banner-wrap'>
+          <div key={i} className='relative w-full h-screen banner-wrap mb-[20px] lg:mb-0'>
 
             <img
               src={el.image}
@@ -95,11 +95,11 @@ const BannerSlider = () => {
             />
             <div className="absolute top-0 left-0 w-full h-full bg-black/25 z-10"></div>
             <div className="relative z-20 flex items-center justify-center h-full w-full text-center px-4">
-              <div className="text-white max-w-7xxl mx-auto px-[15px]">
+              <div className="text-white max-w-7xxl mx-auto px-[0px] sm:px-[15px]">
                 <h4 className="text-white text-[10px] md:text-[12px] font-semibold tracking-[1px] uppercase">{el.subtitle}</h4>
-                <h1 className="text-2xl sm:text-[50px] md:text-[66px] font-[500] sm:font-[300]  lg:text-[77px] xl:text-[98px] lg:font-semibold leading-[1.2] uppercase">{el.title}</h1>
-                <p className="text-sm sm:text-lg md:text-[16px] opacity-[0.6]">{el.text}</p>
-                <button className="mt-4 px-6 py-2 text-sm sm:text-white font-semibold flex flex-row gap-2 justify-center w-full text-white rounded  left-animate">
+                <h1 className="text-[34px] sm:text-[50px] md:text-[66px] font-[500] sm:font-[300]  lg:text-[77px] xl:text-[98px] lg:font-semibold leading-[1.2] uppercase">{el.title}</h1>
+                <p className="text-[13px] sm:text-lg md:text-[16px] opacity-[0.6]">{el.text}</p>
+                <button className="mt-4 px-6 py-2 text-[16px] sm:text-sm sm:text-white font-semibold flex flex-row gap-2 justify-center w-full text-white rounded  left-animate">
                   {el.buttonText} <img className='invert ' src={forward} alt="" />
                 </button>
               </div>

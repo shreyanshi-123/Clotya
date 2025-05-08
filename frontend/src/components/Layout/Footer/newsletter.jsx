@@ -6,15 +6,15 @@ const FooterTopSection = () => {
       <div className="max-w-7xxl mx-auto px-[15px] flex flex-col md:flex-row justify-between gap-10">
 
         {/* Subscribe Section */}
-        <div className="md:w-2/5">
-          <h3 className="text-[30px] text-white font-medium mb-2">
+        <div className="md:w-1/2 lg:w-2/5">
+          <h3 className="text-[30px] text-white font-medium mb-2 max-w-[400px]">
             Get our emails for info on new items, sales and more.
           </h3>
-          <p className="text-[#75767c] mb-4">
+          <p className="text-[#75767c] text-[16px] mb-[30px] leading-[1.5] font-medium">
             We'll email you a voucher worth £10 off your first order over £50.
           </p>
 
-          <form className="flex flex-col border border-white sm:flex-row" method="post">
+          <form className="flex flex-col border border-white sm:flex-row h-[48px]" >
             <input
               className="flex-1 py-[8px] px-[15px] border border-white "
               type="email"
@@ -30,19 +30,19 @@ const FooterTopSection = () => {
             </button>
           </form>
 
-          <p className="text-[12px] text-[#75767C] mt-3">
+          <p className="text-[12px] text-[#75767C] mt-2.5 mb-[20px]">
             By subscribing you agree to our{' '}
             <a href="#" className="">Terms & Conditions and Privacy & Cookies Policy.</a>
           </p>
         </div>
 
         {/* Contact & App Section */}
-        <div className="md:w-2/5">
-          <h3 className="text-[30px]  font-medium text-white mb-2">
+        <div className="md:w-1/2 lg:w-2/5">
+          <h3 className="text-[30px]  font-medium text-white mb-2 max-w-[400px] ">
             Need help?<br />
             (+800) 1234 5678 90
           </h3>
-          <p className="text-[#75767C] text-[16px] mb-4">We are available 8:00am – 7:00pm</p>
+          <p className="text-[#75767C] text-[16px] mb-4 leading-[1.5]">We are available 8:00am – 7:00pm</p>
 
           
 

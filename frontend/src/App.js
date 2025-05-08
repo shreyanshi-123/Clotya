@@ -41,7 +41,7 @@ function App() {
 
             <Route path='/aboutus' element={<Home />} />
             <Route path='/floorplan' element={<Home />} />
-            <Route path='/smartliving' element={<Home />} />
+           
             <Route path='/amenities' element={<Home />} />
             <Route path='/connectivity' element={<Home />} />
             <Route path='/gallery' element={<Home />} />

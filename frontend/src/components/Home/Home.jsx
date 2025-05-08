@@ -1,10 +1,12 @@
+
 import MetaData from "../Layout/MetaData"
 // import AboutUs from "./AboutUs/AboutUs"
 // import Amenities from "./Amenities/Amenities"
 import BannerSlider from "./BannerSlider/BannerSlider"
-// import ContactUs from "./ContactUs/ContactUs"
-// import FloorPlan from "./FloorPlan/FloorPlan"
-// import Gallery from "./Gallery/Gallery"
+import FreeShipping from "./FreeShipping/freeShipping"
+import NewCollection1 from "./NewCollection/NewCollection1"
+import NewCollection2 from "./NewCollection/NewCollection2"
+import Category from "./Categories/Category"
 // import ListSection from "./ListSection/ListSection"
 // import ProjectConnectivity from "./ProjectConnectivity/ProjectConnectivity"
 // import SmartLiving from "./SmartLiving/SmartLiving"
@@ -20,11 +22,11 @@ const Home = () => {
             />
 
             <BannerSlider />
-          {/*   <ListSection />
-            <AboutUs />
-            <FloorPlan />
-            <SmartLiving />
-            <Amenities />
+           <FreeShipping />
+            <NewCollection1 />
+            <NewCollection2 />
+             <Category />
+          {/*   <Amenities />
             <ProjectConnectivity />
             <Gallery />
             <ContactUs /> */}
