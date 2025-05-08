@@ -611,7 +611,7 @@ const Header = () => {
                       CATEGORY
                       <FontAwesomeIcon icon={faAngleDown} className="text-xs ml-1" />
                     </a>
-                    <div className="absolute w-full left-0 top-[100px] right-0 h-[auto] hidden group-hover:flex gap-10 bg-white text-black mt-4   shadow-lg z-50">
+                    <div className="absolute w-full left-0 top-[94px] right-0 h-[auto] hidden group-hover:flex gap-10 bg-white text-black mt-4   shadow-lg z-50">
                       <div className="max-w-7xxl w-full mx-auto px-[15px] justify-center flex" >
 
                         {/* ============================================================= */}
@@ -619,7 +619,7 @@ const Header = () => {
 
                         <ul className="py-[50px] text-sm font-medium flex gap-[20px] xl:gap-[30px] justify-center items-center text-center">
                           <li className='flex flex-col' >
-                            <div className="rounded-[50%] h-[150px] xl:h-[179.156px] w-[150px] xl:w-[179.156px] bg-[#f3f3f3] overflow-hidden rounded-dropdown">
+                            <div className="rounded-[50%] h-[150px] 5xl:h-[166px] xl:h-[179.156px] w-[150px] 5xl:w-[166px] xl:w-[179.156px] bg-[#f3f3f3] overflow-hidden rounded-dropdown">
                               <a href="">  <LazyLoadImage
                                 src={Category1}
                                 alt="Category Women"
@@ -689,7 +689,7 @@ const Header = () => {
                       MEN
                       <FontAwesomeIcon icon={faAngleDown} className="text-xs ml-1" />
                     </a>
-                    <div className="absolute flex-col w-full top-[100px] left-0 right-0 h-[auto] hidden group-hover:flex  bg-white text-black mt-4   shadow-lg z-50">
+                    <div className="absolute flex-col w-full top-[94px] left-0 right-0 h-[auto] hidden group-hover:flex  bg-white text-black mt-4   shadow-lg z-50">
                       <div className="max-w-7xxl w-full mx-auto px-[15px] justify-center flex" >
                         <div className='flex gap-[30px] w-full' >
                           <div className="w-[60%] pr-[50px] py-[50px]">
@@ -762,7 +762,7 @@ const Header = () => {
                       WOMEN
                       <FontAwesomeIcon icon={faAngleDown} className="text-xs ml-1" />
                     </a>
-                    <div className="absolute w-full top-[100px] left-0 right-0  hidden group-hover:flex gap-10 bg-white text-black mt-4  shadow-lg z-50 ">
+                    <div className="absolute w-full top-[94px] left-0 right-0  hidden group-hover:flex gap-10 bg-white text-black mt-4  shadow-lg z-50 ">
 
 
                       <div className="max-w-7xxl w-full mx-auto gap-[30px] px-[15px] justify-center flex" >
@@ -878,7 +878,7 @@ const Header = () => {
 
 
               {/* Center: Logo */}
-              <div className="absolute left-[54%] transform -translate-x-1/2 z-10">
+              <div className="absolute left-[47%] sm:left-[54%] transform -translate-x-1/2 z-10">
                 <NavLink to="/" className="block w-auto">
                   <LazyLoadImage
                     src={Logo}

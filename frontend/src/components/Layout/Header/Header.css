@@ -264,6 +264,9 @@
 .shop-now {
     border: 1px solid #ee403d;
 }
+.shop-now:hover {
+    color: #ee403d !important;
+}
 
 .product-label {
     position: absolute;
@@ -626,7 +629,7 @@ button.accordion-button {
     /* border: 1px solid #eef2f6; */
     -webkit-box-shadow: 0 2px 3px rgba(4, 30, 66, 0.07);
     box-shadow: 0 2px 3px rgba(4, 30, 66, 0.07);
-    /* border: 1px solid #dee0ea; */
+    border: 1px solid #dee0ea;
     border-radius: 4px;
     width: 100%;
 }
