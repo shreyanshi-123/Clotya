@@ -7,9 +7,9 @@ import FreeShipping from "./FreeShipping/freeShipping"
 import NewCollection1 from "./NewCollection/NewCollection1"
 import NewCollection2 from "./NewCollection/NewCollection2"
 import Category from "./Categories/Category"
-// import ListSection from "./ListSection/ListSection"
-// import ProjectConnectivity from "./ProjectConnectivity/ProjectConnectivity"
-// import SmartLiving from "./SmartLiving/SmartLiving"
+import Signature from "./Signature"
+import Review from "./ReviewSection/Review"
+import ProductSlider from "./ProductSlider/ProductSlider"
 
 const Home = () => {
     return(
@@ -26,10 +26,10 @@ const Home = () => {
             <NewCollection1 />
             <NewCollection2 />
              <Category />
-          {/*   <Amenities />
-            <ProjectConnectivity />
-            <Gallery />
-            <ContactUs /> */}
+         <Signature />
+              <Review />
+           <ProductSlider />
+         {/*      <ContactUs /> */}
         </>
     )
 }
