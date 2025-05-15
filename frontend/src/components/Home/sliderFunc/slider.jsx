@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight, faHeart, faShoppingBag, faArrowsUpDownLeftRight, faStar, faRotate } from '@fortawesome/free-solid-svg-icons';
 // import   faHeart from '@fortawesome/free-regular-svg-icons';
 import './slider.css';
+import Review from '../ReviewSection/Review';
 
 // Image imports
 const Jacket1 = `${process.env.REACT_APP_API_URL}/assets/images/Products/jackets/basic1.jpeg`;
@@ -37,35 +38,41 @@ const productList = [
   {
     id: 1,
     title: "Basic Colored Sweatpants With Elastic Hems",
-    price: "$110.99",
+    price: "110.99",
     imageMain: Pants1,
+    Review : '1 review',
     hoverImages: [Pants1, Pants2, Pants3, Pants4]
   },
   {
     id: 2,
     title: "Basic High-Neck Puff Jacket",
-    price: "$110.99",
+    price: "110.99",
+    Review : '2 reviews',
     imageMain: Jacket1,
+    
     hoverImages: [Jacket1, Jacket2, Jacket3, Jacket4, Jacket5]
   },
   {
     id: 3,
     title: "Basic Relax Fit Leggings",
-    price: "$110.99",
+    price: "110.99",
+    Review : '3 reviews',
     imageMain: Leggings1,
     hoverImages: [Leggings1, Leggings2, Leggings3, Leggings4]
   },
   {
     id: 4,
     title: "Check Overshirt With Pocket Detail",
-    price: "$110.99",
+    Review : '1 review',
+    price: "110.99",
     imageMain: WhiteTee1,
     hoverImages: [WhiteTee1, WhiteTee2, WhiteTee3, WhiteTee4]
   },
   {
     id: 5,
     title: "Rose Printed Hoodie",
-    price: "$110.99",
+    price: "110.99",
+    Review : '1 review',
     imageMain: Hoody1,
     hoverImages: [Hoody1, Hoody2, Hoody3, Hoody4]
   }
@@ -118,10 +125,10 @@ const HoverProductSlider = () => {
   const badges = productBadge();
 
   return (
-    <section className="max-w-7xxl mx-auto category-section">
+    <section className="max-w-7xxl mx-auto Product-section category-section mb-[40px] lg:my-[40px] ">
       <div className="p-[15px]">
         <div class="site-module ">
-          <div class="module-header flex flex-col lg:flex-row justify-between  mt-[40px] mb-[30px]">
+          <div class="module-header flex flex-col lg:flex-row justify-between mt-[25px] lg:mt-[40px] lg:mb-[30px] pb-[15px] lg:pb-[0px]">
             <h3 class="entry-title max-w-full mb-[8px] lg:max-w-[35%] font-medium text-[20px] lg:text-[30px]">Featured Products</h3>
             <div class="entry-description max-w-[840px] lg:max-w-[60%] text-[#75767c] text-[14px] lg:text-[17px] font-[300]"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.</p></div>
           </div>
@@ -143,7 +150,7 @@ const ProductCard = ({ product, badge }) => {
 
     <div className="product-card ">
       <div className="thumbnail-wrapper mb-[20px]">
-        <div class="product-badges absolute left-[10px] top-[10px] bg-[white] z-30"> {badge && (
+        <div class="product-badges"> {badge && (
           <div className="product-badges absolute left-[10px] top-[10px] bg-white z-30">
             <span className={`badge style-1 trending font-medium ${badge.text}`}>
               {badge.title}
@@ -190,12 +197,8 @@ const ProductCard = ({ product, badge }) => {
           <div class="product-swatches mb-[10px]">
             <div class="product-review flex gap-2.5">
               <div class="stars flex gap-[6px] items-center">
-                <FontAwesomeIcon icon={faStar} className=" text-[12px] text-[#edbc30]" />
-                {/* <FontAwesomeIcon icon={faStar} className=" text-[12px] text-[#edbc30]" />
-                                              <FontAwesomeIcon icon={faStar} className="  text-[12px] text-[#edbc30]" />
-                                              <FontAwesomeIcon icon={faStar} className="  text-[12px] text-[#edbc30]" /> */}
                 <FontAwesomeIcon icon={faStar} className=" text-[12px] text-[#edbc30]" /></div>
-              <span className='font-medium text-[13px]'>2 reviews</span>
+              <span className='font-medium text-[13px]'>{product.Review} </span>
             </div>
           </div>
         </div>
@@ -206,8 +209,8 @@ const ProductCard = ({ product, badge }) => {
             <span class="woocommerce-Price-currencySymbol">$</span>25.90
           </span>
           {/* <span class="screen-reader-text">Original price was: $25.90.</span> */}
-          <span class="woocommerce-Price-amount amount">
-            <span class="woocommerce-Price-currencySymbol">$</span>19.90</span>
+          <span class="woocommerce-Price-amount amount font-medium">
+            <span class="woocommerce-Price-currencySymbol">$</span>{product.price}</span>
           {/* <span class="screen-reader-text">Current price is: $19.90.</span> */}
         </span>
       </div>

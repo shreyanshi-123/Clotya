@@ -8,9 +8,9 @@ const ReviewImg = ` ${process.env.REACT_APP_API_URL}/assets/images/reviewImg.web
 
 const Review = () => {
     return (
-        <section class="mt-[85px] max-w-7xxl mx-auto">
+        <section class="mt-[25px] lg:mt-[85px] max-w-7xxl mx-auto">
             <div class="flex flex-col lg:flex-row">
-                <div class="w-auto lg:w-[45%]">
+                <div class="w-auto lg:w-[50%]">
                     <div class="p-[15px]">
                         <div class="">
                             <div class="">
@@ -19,11 +19,11 @@ const Review = () => {
                         </div>
                     </div>
                 </div>
-                <div class="w-[10%]">
+                <div class="w-[7.665%]">
                     <div class="">
                     </div>
                 </div>
-                <div class=" lg:w-[45%] p-[15px]">
+                <div class=" lg:w-[41.66666667%] p-[15px]">
                     <div class="">
                         <div class="">
                             <div class="">
@@ -66,7 +66,7 @@ const Review = () => {
                     </div>
                 </div>
             </div>
-
+            <div className="lg:mt-[40px]"> <div className="px-[15px] py-[5px] lg:p-[15px] mx-auto"><div className="lg:py-[10px]"><hr /></div></div></div>
         </section >
     )
 }

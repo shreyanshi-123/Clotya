@@ -64,16 +64,16 @@ h1.banner-title.w-fit {
     width: 100% !important;
 }
 
-.slick-dots {
+.banner-wrap .slick-dots {
     bottom: 25px;
 }
 
-.slick-dots li button::before {
+.banner-wrap .slick-dots li button::before {
     color: #fff;
     font-size: 14px;
 }
 @media (min-width:1024px){
-    .slick-dots .slick-active button::before {
+    .banner-wrap  .slick-dots .slick-active button::before {
         opacity: 1;
         color: #fff !important;
     }
@@ -179,7 +179,7 @@ header.scrolled.sticky.home-header {
     min-height: 630px;
 }
 
-.slick-dots {
+.banner-wrap .slick-dots {
     bottom: 15px;
 }
 

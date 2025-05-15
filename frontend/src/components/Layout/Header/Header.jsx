@@ -254,7 +254,44 @@ const category = [
   }
 ]
 
+const men =  [
+  { id: 1, item: 'Jackets & Coats' },
+  { id: 2, item: 'Jeans' },
+  { id: 3, item: 'Loungewear' },
+  { id: 4, item: 'Polo shirts' },
+  { id: 5, item: 'Shirts' },
+  { id: 6, item: 'Shorts' },
+  { id: 7, item: 'Suits' },
+  { id: 8, item: 'Swimwear' },
+  { id: 9, item: 'T-shirts' },
+  { id: 10, item: 'Tracksuits' },
+  { id: 11, item: 'Trousers' },
+  { id: 12, item: 'Underwear' }
+]
 
+
+
+
+
+
+
+
+
+
+
+const Women =  [
+  { id: 1, item: 'Dresses' },
+  { id: 2, item: 'Jackets & Coats' },
+  { id: 3, item: 'Jeans' },
+  { id: 4, item: 'Lingerie' },
+  { id: 5, item: 'Loungewear' },
+  { id: 6, item: 'Skirts' },
+  { id: 7, item: 'Suits' },
+  { id: 8, item: 'Swimwear' },
+  { id: 9, item: 'Top' },
+  { id: 10, item: 'Trousers' },
+
+]
 
 
 const Header = () => {
@@ -266,7 +303,7 @@ const Header = () => {
   };
 
 
-  
+
   // const cartRef = useRef(null);
 
   // // Close dropdown when clicking outside
@@ -313,12 +350,12 @@ const Header = () => {
                         <LazyLoadImage
                           src={Logo}
                           alt="Clotya"
-                         
+
                           className="invert w-[112px]  "
                         />
                       </NavLink>
                       <button
-                        className="text-black flex justify-center items-center  text-xl bg-[#e8e9ef] w-[30px] h-[30px] relative text-end w-full"
+                        className="text-black flex justify-center items-center  text-xl bg-[#e8e9ef] w-[30px] h-[30px] relative text-end "
                         onClick={() => setMenuOpen(false)}  // Toggle menu visibility
                       >
                         {/* Font Awesome icon changes based on menuOpen state */}
@@ -331,8 +368,8 @@ const Header = () => {
                         {/* Shop Section */}
                         <Accordion.Item eventKey="0">
                           <Accordion.Header>
-                            
-                           <a href="#" className='text-black hover:text-primary-red'><h3 className=" text-black text-[16px] py-[8px] leading-[1.5]">
+
+                            <a href="#" className='text-black hover:text-primary-red'><h3 className=" text-black text-[16px] py-[8px] leading-[1.5]">
                               Shop
                             </h3></a>
                           </Accordion.Header>
@@ -341,14 +378,14 @@ const Header = () => {
                               {/* Men Section */}
                               <Accordion.Item eventKey="1">
                                 <Accordion.Header>
-                                <a href="#" className='text-black hover:text-primary-red'><h3 className=" text-black text-[15px] py-[4px] leading-[1.5]">
-                              Men
-                            </h3></a>
+                                  <a href="#" className='text-black hover:text-primary-red'><h3 className=" text-black text-[15px] py-[4px] leading-[1.5]">
+                                    Men
+                                  </h3></a>
                                 </Accordion.Header>
                                 <Accordion.Body>
 
                                   {row1.concat(row2).map(({ id, item }) => (
-                                 <a href="#" className='text-black hover:text-primary-red'>   <li key={id} className='text-black text-[15px] py-[4px] leading-[1.5]'>{item}</li></a>
+                                    <a href="#" className='text-black hover:text-primary-red'>   <li key={id} className='text-black text-[15px] py-[4px] leading-[1.5]'>{item}</li></a>
                                   ))}
 
                                 </Accordion.Body>
@@ -357,14 +394,14 @@ const Header = () => {
                               {/* Women Section */}
                               <Accordion.Item eventKey="2">
                                 <Accordion.Header>
-                                <a href="#" className='text-black hover:text-primary-red'><h3 className=" text-black text-[15px] py-[4px] leading-[1.5]">
-                             Women
-                            </h3></a>
+                                  <a href="#" className='text-black hover:text-primary-red'><h3 className=" text-black text-[15px] py-[4px] leading-[1.5]">
+                                    Women
+                                  </h3></a>
                                 </Accordion.Header>
                                 <Accordion.Body>
 
                                   {row11.concat(row22).map(({ id, item }) => (
-                                 <a href="#" className='text-black hover:text-primary-red'>   <li key={id} className='text-black text-[15px] py-[4px] leading-[1.5]'>{item}</li></a>
+                                    <a href="#" className='text-black hover:text-primary-red'>   <li key={id} className='text-black text-[15px] py-[4px] leading-[1.5]'>{item}</li></a>
                                   ))}
 
                                 </Accordion.Body>
@@ -373,14 +410,14 @@ const Header = () => {
                               {/* Others Section */}
                               <Accordion.Item eventKey="3">
                                 <Accordion.Header>
-                                <a href="#" className='text-black hover:text-primary-red'><h3 className=" text-black text-[15px] py-[4px] leading-[1.5]">
-                              Others
-                            </h3></a>
+                                  <a href="#" className='text-black hover:text-primary-red'><h3 className=" text-black text-[15px] py-[4px] leading-[1.5]">
+                                    Others
+                                  </h3></a>
                                 </Accordion.Header>
                                 <Accordion.Body>
 
                                   {row111.concat(row222).map(({ id, item }) => (
-                                   <a href="#" className='text-black hover:text-primary-red'> <li key={id} className='text-black text-[15px] py-[4px] leading-[1.5]'>{item}</li></a>
+                                    <a href="#" className='text-black hover:text-primary-red'> <li key={id} className='text-black text-[15px] py-[4px] leading-[1.5]'>{item}</li></a>
                                   ))}
 
                                 </Accordion.Body>
@@ -392,14 +429,14 @@ const Header = () => {
                         {/* Category Section */}
                         <Accordion.Item eventKey="4">
                           <Accordion.Header>
-                          <a href="#" className='text-black hover:text-primary-red'><h3 className=" text-black text-[16px] py-[8px] leading-[1.5]">
-                             Category
+                            <a href="#" className='text-black hover:text-primary-red'><h3 className=" text-black text-[16px] py-[8px] leading-[1.5]">
+                              Category
                             </h3></a>
                           </Accordion.Header>
                           <Accordion.Body>
 
                             {category.map(({ id, item }) => (
-                          <a href="#" className='text-black hover:text-primary-red'>    <li key={id} className='text-black text-[15px] py-[4px] leading-[1.5]'>{item}</li></a> 
+                              <a href="#" className='text-black hover:text-primary-red'>    <li key={id} className='text-black text-[15px] py-[4px] leading-[1.5]'>{item}</li></a>
                             ))}
 
                           </Accordion.Body>
@@ -408,14 +445,14 @@ const Header = () => {
                         {/* Repeating Men, Women Sections */}
                         <Accordion.Item eventKey="5">
                           <Accordion.Header>
-                          <a href="#" className='text-black hover:text-primary-red'><h3 className=" text-black text-[16px] py-[8px] leading-[1.5]">
-                             Men
+                            <a href="#" className='text-black hover:text-primary-red'><h3 className=" text-black text-[16px] py-[8px] leading-[1.5]">
+                              Men
                             </h3></a>
                           </Accordion.Header>
                           <Accordion.Body>
 
-                            {category.map(({ id, item }) => (
-                            <a href="#" className='text-black hover:text-primary-red'>   <li key={id} className='text-black text-[15px] py-[4px] leading-[1.5]'>{item}</li></a>
+                            {men.map(({ id, item }) => (
+                              <a href="#" className='text-black hover:text-primary-red'>   <li key={id} className='text-black text-[15px] py-[4px] leading-[1.5]'>{item}</li></a>
                             ))}
 
                           </Accordion.Body>
@@ -423,13 +460,13 @@ const Header = () => {
 
                         <Accordion.Item eventKey="6">
                           <Accordion.Header>
-                          <a href="#" className='text-black hover:text-primary-red'><h3 className=" text-black text-[16px] py-[8px] leading-[1.5]">
-                             Women
+                            <a href="#" className='text-black hover:text-primary-red'><h3 className=" text-black text-[16px] py-[8px] leading-[1.5]">
+                              Women
                             </h3></a>
                           </Accordion.Header>
                           <Accordion.Body>
 
-                            {category.map(({ id, item }) => (
+                            {Women.map(({ id, item }) => (
                               <li key={id} className='text-black text-[15px] py-[4px] leading-[1.5]'>{item}</li>
                             ))}
 
@@ -818,7 +855,7 @@ const Header = () => {
                                 <h2 className='text-[30px] text-white font-medium leading-[1.2] mb-5'>Street style <br />
                                   has its own <br />
                                   rules</h2>
-                              <a href="">  <div className=""><div className="flex gap-2 text-[18.7px] font-medium text-white wrapper-btn"><div className="btn-content">Shop Now</div> <img src={arrow} alt="" className='invert' /></div></div></a>
+                                <a href="">  <div className=""><div className="flex gap-2 text-[18.7px] font-medium text-white wrapper-btn"><div className="btn-content">Shop Now</div> <img src={arrow} alt="" className='invert' /></div></div></a>
                               </div>
                             </div>
                           </div>
@@ -872,13 +909,13 @@ const Header = () => {
                     </div>
                   </div>
                 </nav>
-               
+
 
               </div>
 
 
               {/* Center: Logo */}
-              <div className="absolute left-[47%] sm:left-[54%] transform -translate-x-1/2 z-10">
+              <div className="absolute left-[47%] sm:left-[50.5%]  lg:left-[54%] transform -translate-x-1/2 z-10">
                 <NavLink to="/" className="block w-auto">
                   <LazyLoadImage
                     src={Logo}
@@ -916,42 +953,42 @@ const Header = () => {
 
                 </div>
                 <div className='header-button'>
-                <a href="#" className=''>
-                  <div className='flex  ml-2.5 cart-btn ' >
-                    <span className='text-black lg:text-white text-[13px] CartAmount'>$24.90</span>
-                    <div className="relative h-[36px] w-[32px] justify-center flex items-center">
-                      <FontAwesomeIcon
+                  <a href="#" className=''>
+                    <div className='flex  ml-2.5 cart-btn ' >
+                      <span className='text-black lg:text-white text-[13px] CartAmount'>$0.00</span>
+                      <div className="relative h-[36px] w-[32px] justify-center flex items-center">
+                        <FontAwesomeIcon
 
-                        icon={faShoppingBag}
-                        className={`text-white  cursor-pointer`}
-                        size="lg"
-                      />
-                      <span class="count klbwl-wishlist-count absolute bg-primary-red text-white font-semibold text-[10px] rounded-[50%] top-0 right-[0px] min-h-[15px] min-w-[15px] py-[2px] flex items-center justify-center">0</span>
-                    </div>
-                  </div>
-                </a>
-                <div class="cart-dropdown ">
-                  <div class="cart-dropdown-wrapper">
-                    <div class="fl-mini-cart-content">
-
-
-                      <div class="cart-empty">
-                        <div class="empty-icon">
-                          <img src={ShoppingBag} alt="" />
-                        </div>
-                        <div class="empty-text">No products in the cart.</div>
+                          icon={faShoppingBag}
+                          className={`text-white  cursor-pointer`}
+                          size="lg"
+                        />
+                        <span class="count klbwl-wishlist-count absolute bg-primary-red text-white font-semibold text-[10px] rounded-[50%] top-0 right-[0px] min-h-[15px] min-w-[15px] py-[2px] flex items-center justify-center">0</span>
                       </div>
+                    </div>
+                  </a>
+                  <div class="cart-dropdown ">
+                    <div class="cart-dropdown-wrapper">
+                      <div class="fl-mini-cart-content">
 
+
+                        <div class="cart-empty">
+                          <div class="empty-icon">
+                            <img src={ShoppingBag} alt="" />
+                          </div>
+                          <div class="empty-text">No products in the cart.</div>
+                        </div>
+
+                      </div>
                     </div>
                   </div>
-                </div>
                 </div>
 
               </div> </div>
           </div></div>
       </div>
       {/* </div> */}
-     
+
     </header >
   );
 };

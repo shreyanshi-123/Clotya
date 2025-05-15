@@ -9,7 +9,7 @@ import NewCollection2 from "./NewCollection/NewCollection2"
 import Category from "./Categories/Category"
 import Signature from "./Signature"
 import Review from "./ReviewSection/Review"
-import ProductSlider from "./ProductSlider/ProductSlider"
+
 import SliderFunc from "./sliderFunc/slider"
 
 
@@ -30,7 +30,7 @@ const Home = () => {
             <Category />
             <Signature />
             <Review />
-            {/* <ProductSlider /> */}
+           
             <SliderFunc />
         </>
     )

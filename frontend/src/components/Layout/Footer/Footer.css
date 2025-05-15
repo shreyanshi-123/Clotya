@@ -20,3 +20,7 @@
 .wrap-pay p{
     text-align: center!important;
 }}
+
+.lnks-footer:last-child {
+    padding-right: 0px!important;
+}

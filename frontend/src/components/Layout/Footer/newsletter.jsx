@@ -6,7 +6,7 @@ const FooterTopSection = () => {
       <div className="max-w-7xxl mx-auto px-[15px] flex flex-col md:flex-row justify-between gap-10">
 
         {/* Subscribe Section */}
-        <div className="md:w-1/2 lg:w-2/5">
+        <div className="md:w-1/2 lg:w-2/5 max-w-[708px]">
           <h3 className="text-[30px] text-white font-medium mb-2 max-w-[400px]">
             Get our emails for info on new items, sales and more.
           </h3>

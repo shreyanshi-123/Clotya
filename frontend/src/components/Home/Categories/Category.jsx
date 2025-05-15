@@ -107,7 +107,7 @@ const Category = () => {
     ];
 
     return (
-        <section className="max-w-7xxl mx-auto category-section ">
+        <section className="max-w-7xxl mx-auto category-section mt-[25px] lg:mt-[40px]">
             <div className="p-[15px]">
                 <div className="category-header flex items-center mb-[40px]">
                     <h3 className="entry-title text-[22px] font-medium mr-[15px]">Best for your categories</h3>

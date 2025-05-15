@@ -8,7 +8,7 @@ const Collection1Item2 = ` ${process.env.REACT_APP_API_URL}/assets/images/NewCol
 
 const Collection1 = () => {
     return(
-<section class=" max-w-7xxl m-auto">
+<section class=" max-w-7xxl m-auto mt-2.5">
     <div class="flex flex-wrap justify-self-center mt-[10px] lg:mt-[40px]">
         <div class="p-[15px] w-full lg:w-1/4 flex justify-center items-center">
             <div class="">

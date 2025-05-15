@@ -676,11 +676,11 @@ button.accordion-button {
     border-radius: 2px;
 }
 
-.slick-arrow.slick-next {
+.banner-section .slick-arrow.slick-next {
     right: 11px !important;
 }
 
-.slick-arrow {
+.banner-section .slick-arrow {
     display: none !important;
 }
 

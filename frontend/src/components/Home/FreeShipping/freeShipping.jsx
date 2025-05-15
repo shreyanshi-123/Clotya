@@ -13,7 +13,7 @@ const FreeShipping = () => {
             <div class="  mt-[24px]">
                 <div className="flex flex-wrap ">
                     <div class="p-[15px] w-full md:w-1/2 lg:w-1/4">
-                        <div class="flex items-start"><div class="iconbox-icon max-w-[100%] lg:max-w-[70px] flex items-center justify-center h-[75px] mr-[20px]"> <LazyLoadImage
+                        <div class="flex items-start"><div class="iconbox-icon max-w-[100%] lg:max-w-[70px] flex md:items-center justify-center h-[75px] mr-[20px]"> <LazyLoadImage
                             src={Item1}
                             alt="Clotya"
 
@@ -30,7 +30,7 @@ const FreeShipping = () => {
 
 
                     <div class="p-[15px] w-full md:w-1/2 lg:w-1/4">
-                        <div class=" flex items-start"><div class="max-w-[100%] lg:max-w-[70px] mr-[20px] flex items-center justify-center h-[75px]"> <LazyLoadImage
+                        <div class=" flex items-start"><div class="max-w-[100%] lg:max-w-[70px] mr-[20px] flex md:items-center justify-center h-[75px]"> <LazyLoadImage
                             src={Item2}
                             alt="Clotya"
 
@@ -47,7 +47,7 @@ const FreeShipping = () => {
 
 
                     <div class="p-[15px] w-full md:w-1/2 lg:w-1/4">
-                        <div class="flex items-start"><div class="iconbox-icon max-w-[100%] lg:max-w-[70px] mr-[20px] flex items-center justify-center h-[75px]"> <LazyLoadImage
+                        <div class="flex items-start"><div class="iconbox-icon max-w-[100%] lg:max-w-[70px] mr-[20px] flex md:items-center justify-center h-[75px]"> <LazyLoadImage
                             src={Item3}
                             alt="Clotya"
 
@@ -65,7 +65,7 @@ const FreeShipping = () => {
 
                     <div class="p-[15px] w-full md:w-1/2 lg:w-1/4">
                         <div class="flex items-start">
-                            <div class="iconbox-icon max-w-[100%] lg:max-w-[70px] mr-[20px] flex items-center justify-center h-[75px]"> <LazyLoadImage
+                            <div class="iconbox-icon max-w-[100%] lg:max-w-[70px] mr-[20px] flex md:items-center justify-center h-[75px]"> <LazyLoadImage
                                 src={Item4}
                                 alt="Clotya"
 
@@ -82,7 +82,7 @@ const FreeShipping = () => {
                 </div>
 
             </div>
-            <div className="p-[15px]">
+            <div className="px-[15px] py-[5px]">
                 <hr /></div>
         </section>)
 }

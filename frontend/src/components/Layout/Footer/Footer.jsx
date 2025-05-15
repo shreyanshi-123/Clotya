@@ -62,8 +62,8 @@ const Footer = () => {
                 </div>
             </div>
             {/* Copyright */}
-            <div className="max-w-7xxl mx-auto px-[15px] border-t border-gray-200">
-                <div className="pt-[30px] sm:pt-[40px] pb-[30px] sm:pb-[50px] flex flex-col md:flex-row justify-between items-center text-[13px] text-black gap-2.5 sm:gap-4">
+            <div className="max-w-7xxl mx-auto px-[15px] ">
+                <div className="pt-[30px] sm:pt-[40px] pb-[30px] sm:pb-[50px] flex flex-col md:flex-row justify-between items-center text-[13px] text-black gap-2.5 sm:gap-4 border-t border-gray-200">
                     <div className='flex gap-[10px]  lg:gap-5 flex-col lg:flex-row wrap-pay'>
                         <p className='leading-[1.5]'>Copyright {new Date().getFullYear()} &copy; Clotya. All rights reserved.</p>
                         <a href="#">
@@ -72,7 +72,7 @@ const Footer = () => {
                         </div>
                     <ul className="flex flex-wrap text-[13px] text-black divide-x divide-gray-300 copyrite">
                         {bottomLinks.map((link, i) => (
-                            <li key={i} className="px-3 first:pl-0 last:pr-0">
+                            <li key={i} className=" first:pl-0 last:pr-0 px-3 lnks-footer">
                                 <a href="#" className="leading-[1.5]">{link}</a>
                             </li>
                         ))}
