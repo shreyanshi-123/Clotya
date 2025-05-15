@@ -23,7 +23,7 @@ const Review = () => {
                     <div class="">
                     </div>
                 </div>
-                <div class="w-auto lg:w-[45%] p-[15px]">
+                <div class=" lg:w-[45%] p-[15px]">
                     <div class="">
                         <div class="">
                             <div class="">

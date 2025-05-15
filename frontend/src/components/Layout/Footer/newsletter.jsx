@@ -14,7 +14,7 @@ const FooterTopSection = () => {
             We'll email you a voucher worth £10 off your first order over £50.
           </p>
 
-          <form className="flex flex-col border border-white sm:flex-row h-[48px]" >
+          <form className="flex  border border-white sm:flex-row h-[48px]" >
             <input
               className="flex-1 py-[8px] px-[15px] border border-white "
               type="email"
@@ -23,7 +23,7 @@ const FooterTopSection = () => {
               required
             />
             <button
-              className="bg-black text-white px-[30px] py-[8px]  hover:bg-gray-800 transition"
+              className="bg-black text-white px-[20px] py-[8px] sm:px-[30px] sm:py-[8px]  hover:bg-gray-800 transition"
               type="submit"
             >
               Subscribe

@@ -110,9 +110,9 @@ const ProductSlider = () => {
         <section className="max-w-7xxl mx-auto category-section">
             <div className="p-[15px]">
                 <div class="site-module ">
-                    <div class="module-header flex justify-between p-[15px] mt-[40px] mb-[30px]">
-                        <h3 class="entry-title max-w-[35%] font-medium text-[30px]">Featured Products</h3>
-                        <div class="entry-description max-w-[60%] text-[#75767c] text-[17px] font-[300]"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.</p></div>
+                    <div class="module-header flex flex-col lg:flex-row justify-between  mt-[40px] mb-[30px]">
+                        <h3 class="entry-title max-w-full mb-[8px] lg:max-w-[35%] font-medium text-[20px] lg:text-[30px]">Featured Products</h3>
+                        <div class="entry-description max-w-[840px] lg:max-w-[60%] text-[#75767c] text-[14px] lg:text-[17px] font-[300]"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.</p></div>
                     </div>
                 </div>
                 <Slider {...settings}>

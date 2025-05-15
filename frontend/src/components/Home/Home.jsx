@@ -10,26 +10,28 @@ import Category from "./Categories/Category"
 import Signature from "./Signature"
 import Review from "./ReviewSection/Review"
 import ProductSlider from "./ProductSlider/ProductSlider"
+import SliderFunc from "./sliderFunc/slider"
+
 
 const Home = () => {
-    return(
+    return (
         <>
-            <MetaData 
-                title={"Clotya – Fashion Store eCommerce Theme"} 
+            <MetaData
+                title={"Clotya – Fashion Store eCommerce Theme"}
                 // description={"Discover premium residential apartments for sale in Zirakpur at The Clotya Aspire. Explore 3 & 4 BHK luxury flats for sale, including options near Chandigarh Airport, all with world-class amenities!"} 
                 // keywords={"The Clotya Aspire, 3 BHK Flats in Zirakpur,4 BHK Flats in Zirakpur, Luxury Apartments in Zirakpur,Zirakpur Real Estate, Flats for Sale in Zirakpur, Clotya Aspire Zirakpur, Modern Apartments Zirakpur"}
                 canonicalUrl={process.env.REACT_APP_API_URL}
             />
 
             <BannerSlider />
-           <FreeShipping />
+            <FreeShipping />
             <NewCollection1 />
             <NewCollection2 />
-             <Category />
-         <Signature />
-              <Review />
-           <ProductSlider />
-         {/*      <ContactUs /> */}
+            <Category />
+            <Signature />
+            <Review />
+            {/* <ProductSlider /> */}
+            <SliderFunc />
         </>
     )
 }

@@ -111,7 +111,7 @@ const Category = () => {
             <div className="p-[15px]">
                 <div className="category-header flex items-center mb-[40px]">
                     <h3 className="entry-title text-[22px] font-medium mr-[15px]">Best for your categories</h3>
-                    <p className="text-[14px] text-[#a6a7ac] flex items-center gap-1 mt-[5px]"><strong className="font-medium">23 categories</strong> belonging to a total of <strong className="font-medium">34,592 products</strong></p>
+                    <p className="text-[14px] text-[#a6a7ac]  items-center gap-1 mt-[5px]"><strong className="font-medium">23 categories</strong> belonging to a total of <strong className="font-medium">34,592 products</strong></p>
                 </div>
                 <Slider {...settings}>
                     {List.map((el, i) => (
