@@ -35,7 +35,7 @@ const Review = () => {
                         </div>
                         <div class="">
                             <div class="mb-[16px] lg:mb-[32px]">
-                                <p class="text-[14px] lg:text-[17px] text-[#75767c] leading-[25.5px]">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.</p>				</div>
+                                <p class="text-[14px] lg:text-[17px] text-[#75767c] leading-[25.5px]">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.</p></div>
                         </div>
                         <div class="">
                             <div class="">

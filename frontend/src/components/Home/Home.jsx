@@ -11,6 +11,8 @@ import Signature from "./Signature"
 import Review from "./ReviewSection/Review"
 
 import SliderFunc from "./sliderFunc/slider"
+import ShopNow from "./ShopNowSection/shopnow"
+import InstagramSlider from "./InstagramSlider/instagram"
 
 
 const Home = () => {
@@ -30,8 +32,9 @@ const Home = () => {
             <Category />
             <Signature />
             <Review />
-           
             <SliderFunc />
+            < ShopNow/>
+            <InstagramSlider/>
         </>
     )
 }

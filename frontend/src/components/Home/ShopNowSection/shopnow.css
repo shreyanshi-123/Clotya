@@ -1,0 +1,137 @@
+.btn-shopnow:hover {
+    color: #ee403d !important;
+}
+
+.black-btn-shop {
+    width: auto;
+    text-align: center !important;
+    padding: 5px 20px !important;
+    font-size: 16px !important;
+    line-height: 28px !important;
+}
+
+.product-info-shop {
+    /* transform: translateY(-25px); */
+    padding: 0px 20px;
+}
+
+.second-image {
+    visibility: hidden;
+}
+
+.image-part:hover .second-image {
+    visibility: visible;
+}
+
+.image-part:hover .first-image {
+    visibility: hidden;
+}
+
+.black-btn-shop {
+    border: 1px solid #000;
+}
+
+.black-btn-shop:hover {
+    background-color: #fff !important;
+    color: #000 !important;
+    border: 1px solid #000;
+}
+
+.productname:hover {
+    color: #ee403d;
+}
+
+.black-btn-shop:hover img {
+    filter: none;
+}
+
+.one::before {
+    content: '1';
+    position: absolute;
+    color: #fff;
+    top: 55%;
+    background: #ee403d;
+    border-radius: 50%;
+    height: 35px;
+    width: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    left: -8%;
+}
+
+.two::before {
+    content: '2';
+    position: absolute;
+    color: #fff;
+    top: 45%;
+    background: #ee403d;
+    border-radius: 50%;
+    height: 35px;
+    width: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 996;
+    right: 63%;
+}
+
+.three::before {
+    content: '3';
+    position: absolute;
+    color: #fff;
+    bottom: 2%;
+    background: #ee403d;
+    border-radius: 50%;
+    height: 35px;
+    width: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
+    left: 45%;
+}
+
+.one a,
+.two a,
+.three a {
+    display: none;
+}
+
+.one:hover a,
+.two:hover a,
+.three:hover a {
+    display: block;
+}
+
+@media (max-width: 800px) {
+   
+}
+
+@media (max-width:640px) {
+
+
+    .wrapper-shop-sec {
+        text-align: center;
+    }
+
+    .bg-div {
+        background-position: 60% !important;
+        background-size: cover;
+    }
+
+    .one::before {
+        top: 50%;
+        left: 31%;
+    }
+
+    .two::before {
+        top: 36%;
+        right: 34%;
+    }
+
+    .three::before {
+        left: 71%;
+    }
+}

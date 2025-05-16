@@ -32,6 +32,12 @@ const WhiteTee1 = `${process.env.REACT_APP_API_URL}/assets/images/Products/White
 const WhiteTee2 = `${process.env.REACT_APP_API_URL}/assets/images/Products/WhiteTshirt/cup2.jpeg`;
 const WhiteTee3 = `${process.env.REACT_APP_API_URL}/assets/images/Products/WhiteTshirt/cup3.jpeg`;
 const WhiteTee4 = `${process.env.REACT_APP_API_URL}/assets/images/Products/WhiteTshirt/cup4.jpeg`;
+
+const Heart = `${process.env.REACT_APP_API_URL}/assets/images/Shopping/heart.png`;
+const Arrow = `${process.env.REACT_APP_API_URL}/assets/images/Shopping/arrows.png`;
+const Bags = `${process.env.REACT_APP_API_URL}/assets/images/Shopping/shopping-bags.png`;
+const compare = `${process.env.REACT_APP_API_URL}/assets/images/Shopping/compare.png`;
+
 const AngleRight = ` ${process.env.REACT_APP_API_URL}/assets/images/angle.png`
 // Products
 const productList = [
@@ -126,14 +132,14 @@ const HoverProductSlider = () => {
 
   return (
     <section className="max-w-7xxl mx-auto Product-section category-section mb-[40px] lg:my-[40px] ">
-      <div className="p-[15px]">
-        <div class="site-module ">
-          <div class="module-header flex flex-col lg:flex-row justify-between mt-[25px] lg:mt-[40px] lg:mb-[30px] pb-[15px] lg:pb-[0px]">
+      <div className="">
+        <div class="site-module p-[15px]">
+          <div class="module-header flex flex-col lg:flex-row justify-between mt-[25px] lg:mt-[0px] lg:mb-[30px] pb-[15px] lg:pb-[0px]">
             <h3 class="entry-title max-w-full mb-[8px] lg:max-w-[35%] font-medium text-[20px] lg:text-[30px]">Featured Products</h3>
             <div class="entry-description max-w-[840px] lg:max-w-[60%] text-[#75767c] text-[14px] lg:text-[17px] font-[300]"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.</p></div>
           </div>
         </div>
-        <Slider {...settings}>
+        <Slider {...settings} className=''>
           {productList.map((product, index) => (
             <ProductCard key={product.id} product={product} badge={badges[index]} />
           ))}
@@ -158,10 +164,10 @@ const ProductCard = ({ product, badge }) => {
           </div>
         )}</div>
         <div className="product-buttons">
-          <a href="#" className="wishlist hover:bg-[#ee403d] bg-white rounded-[50%] h-[34px] w-[34px] p-[4px] flex items-center justify-center  hover:text-[white]"><FontAwesomeIcon icon={faHeart} /></a>
-          <a href="#" className="quick-view wishlist hover:bg-[#ee403d] bg-white rounded-[50%] h-[34px] w-[34px] p-[4px] flex items-center justify-center  hover:text-[white]"><FontAwesomeIcon icon={faArrowsUpDownLeftRight} className='rotate-[45deg]' /></a>
-          <a href="#" className="compare wishlist hover:bg-[#ee403d] bg-white rounded-[50%] h-[34px] w-[34px] p-[4px] flex items-center justify-center  hover:text-[white]"><FontAwesomeIcon icon={faRotate} /></a>
-          <a href="#" className="add-to-cart wishlist hover:bg-[#ee403d] bg-white rounded-[50%] h-[34px] w-[34px] p-[4px] flex items-center justify-center  hover:text-[white]"><FontAwesomeIcon icon={faShoppingBag} /></a>
+          <a href="#" className="wishlist hover:bg-[#ee403d] bg-white rounded-[50%] h-[34px] w-[34px] p-[4px] flex items-center justify-center  hover:text-[white]"><img src={Heart} alt="" className='w-[15px] h-[15px] shop-icon' /></a>
+          <a href="#" className="quick-view wishlist hover:bg-[#ee403d] bg-white rounded-[50%] h-[34px] w-[34px] p-[4px] flex items-center justify-center  hover:text-[white]"><img src={Arrow} alt="" className='w-[15px] h-[15px] shop-icon'/></a>
+          <a href="#" className="compare wishlist hover:bg-[#ee403d] bg-white rounded-[50%] h-[34px] w-[34px] p-[4px] flex items-center justify-center  hover:text-[white]"><img src={compare} alt="" className='w-[15px] h-[15px] shop-icon'/></a>
+          <a href="#" className="add-to-cart wishlist hover:bg-[#ee403d] bg-white rounded-[50%] h-[34px] w-[34px] p-[4px] flex items-center justify-center  hover:text-[white]"><img src={Bags} alt="" className='w-[15px] h-[15px] shop-icon'/></a>
         </div>
 
         <div className="hover-slider-container">
