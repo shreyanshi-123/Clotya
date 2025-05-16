@@ -83,7 +83,7 @@ const InstagramSlider = () => {
         infinite: true,
         speed: 500,
         slidesToShow: 5,
-        // slidesToScroll: 4,
+        slidesToScroll: 5,
         responsive: [
             {
                 breakpoint: 1024,
