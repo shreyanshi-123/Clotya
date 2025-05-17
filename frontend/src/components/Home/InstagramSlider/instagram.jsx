@@ -7,12 +7,13 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import { NavLink } from "react-router-dom";
 import './instaslider.css'
 
-const Post1 = ` ${process.env.REACT_APP_API_URL}/assets/images/instagram/post1.jpg`
-const Post2 = ` ${process.env.REACT_APP_API_URL}/assets/images/instagram/post2.jpg`
-const Post3 = ` ${process.env.REACT_APP_API_URL}/assets/images/instagram/post3.jpg`
-const Post4 = ` ${process.env.REACT_APP_API_URL}/assets/images/instagram/post4.jpg`
-const Post5 = ` ${process.env.REACT_APP_API_URL}/assets/images/instagram/post5.jpg`
-const Post6 = ` ${process.env.REACT_APP_API_URL}/assets/images/instagram/post3.jpg`
+const Post1 = `${process.env.REACT_APP_API_URL}/assets/images/instagram/post1.jpg`
+const Post2 = `${process.env.REACT_APP_API_URL}/assets/images/instagram/post2.jpg`
+const Post3 = `${process.env.REACT_APP_API_URL}/assets/images/instagram/post3.jpg`
+const Post4 = `${process.env.REACT_APP_API_URL}/assets/images/instagram/post4.jpg`
+const Post5 = `${process.env.REACT_APP_API_URL}/assets/images/instagram/post5.jpg`
+const Post6 = `${process.env.REACT_APP_API_URL}/assets/images/instagram/post6.jpg`
+
 
 
 const InstagramSlider = () => {
@@ -83,7 +84,9 @@ const InstagramSlider = () => {
         infinite: true,
         speed: 500,
         slidesToShow: 5,
-        slidesToScroll: 5,
+        swipeToSlide: true,
+        touchMove: true,
+        slidesToScroll: 1,
         responsive: [
             {
                 breakpoint: 1024,
@@ -121,14 +124,14 @@ const InstagramSlider = () => {
                     {posts.map((posts) => (
                         <div key={posts.id} className="slider-item">
                             {/* <InstagramEmbed url={posts.permalink} width="100%" /> */}
-                            <NavLink to="/" className="block w-auto">
+                            {/* <NavLink to="/" className="block w-auto"> */}
                                 <LazyLoadImage
                                     src={posts.image}
                                     alt="Clotya"
                                     width=""
                                     className=""
                                 />
-                            </NavLink>
+                            {/* </NavLink> */}
                         </div>
                     ))}
                 </Slider>

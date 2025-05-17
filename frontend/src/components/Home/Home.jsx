@@ -10,9 +10,10 @@ import Category from "./Categories/Category"
 import Signature from "./Signature"
 import Review from "./ReviewSection/Review"
 
-import SliderFunc from "./sliderFunc/slider"
+import SliderFunc from "./ProductSlider/slider"
 import ShopNow from "./ShopNowSection/shopnow"
 import InstagramSlider from "./InstagramSlider/instagram"
+import Categoryy from "./category"
 
 
 const Home = () => {
@@ -35,6 +36,7 @@ const Home = () => {
             <SliderFunc />
             < ShopNow/>
             <InstagramSlider/>
+            {/* <Categoryy/> */}
         </>
     )
 }

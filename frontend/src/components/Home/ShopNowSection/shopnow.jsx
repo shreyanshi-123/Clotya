@@ -13,6 +13,7 @@ const Product3a = `${process.env.REACT_APP_API_URL}/assets/images/ShopNow/produc
 const Product3b = `${process.env.REACT_APP_API_URL}/assets/images/ShopNow/product3b.jpg`;
 
 const ShopNow = () => {
+    const [activeProduct, setActiveProduct] = useState(null);
     const style = {
         background: `url(${background})`,
         backgroundSize: '', // Optional: Ensures the background covers the container
@@ -38,8 +39,12 @@ const ShopNow = () => {
                             {/* first product */}
                             <div className="firstprod">
                                 {/* <div className="one bg-primary-red text-white font-medium rounded-[50%] w-[35px] h-[35px] flex justify-center items-center absolute top-[56%] left-[-7%]">1</div> */}
-                                <div className="  one " >
-                                    <a href="#" className='w-[410px] h-[260px] absolute left-[-6%] top-[32%] z-[0]' >
+                                <div className={`one ${activeProduct === 'one' ? 'active' : ''}`}
+                                    onMouseEnter={() => setActiveProduct('one')}
+                                    onMouseLeave={() => setActiveProduct(null)}
+                                >
+                                    <a href="javascript:void(0)" className={`product-card-one max-w-[410px] w-full max-h-[260px] h-full absolute left-[-6%] top-[32%] ${activeProduct === 'one' ? 'active' : ''}`}>
+
                                         <div className="product-wrapper flex items-center bg-white">
                                             <div className="image-part w-[48%] relative">
                                                 <img src={Product1b} alt="" className='first-image ' />
@@ -65,62 +70,73 @@ const ShopNow = () => {
                             </div>
                             {/* second product */}
                             <div className="secondProd">
-                            {/* <div className="two bg-primary-red text-white font-medium rounded-[50%] w-[35px] h-[35px] flex justify-center items-center absolute ">2</div> */}
-                            <div className=" two ">
-                                <div className="" >
-                                    <a href="" className='w-[410px] h-[260px] top-[22%] right-[11%] z-[0] absolute'>
-                                        <div className="product-wrapper flex items-center bg-white">
-                                            <div className="image-part w-[48%] relative">
-                                                <img src={Product2a} alt="" className='first-image ' />
-                                                <img src={Product2b} alt="" className='second-image absolute top-0' />
+                                {/* <div className="two bg-primary-red text-white font-medium rounded-[50%] w-[35px] h-[35px] flex justify-center items-center absolute ">2</div> */}
+                                <div className={`two ${activeProduct === 'two' ? 'active' : ''}`}
+                                    onMouseEnter={() => setActiveProduct('two')}
+                                    onMouseLeave={() => setActiveProduct(null)}
+                                >
+                                    <div className="" >
+                                        <a href="javascript:void(0)" className={`product-card-two max-w-[410px] w-full max-h-[260px] h-full absolute top-[22%] right-[11%] ${activeProduct === 'two' ? 'active' : ''}`}>
 
-                                            </div>
-                                            <div className="product-info-shop w-[52%]">
-                                                <h3 className='productname mb-[8px]'>Women's slim-fit cotton tank</h3>
-                                                <p className='price-of-product mb-[8px]'>$16.00</p>
-                                                <div className="review-product my-[15px]">
-                                                    <FontAwesomeIcon icon={faStar} className=" text-[12px] text-[#000]" />
-                                                    <FontAwesomeIcon icon={faStar} className=" text-[12px] text-[#000]" />
-                                                    <FontAwesomeIcon icon={faStar} className=" text-[12px] text-[#000]" />
-                                                    <FontAwesomeIcon icon={faStar} className=" text-[12px] text-[#000]" />
-                                                    <FontAwesomeIcon icon={faStar} className=" text-[12px] text-[#e6e6e6]" />
+
+
+                                            <div className="product-wrapper flex items-center bg-white">
+                                                <div className="image-part w-[48%] relative">
+                                                    <img src={Product2a} alt="" className='first-image ' />
+                                                    <img src={Product2b} alt="" className='second-image absolute top-0' />
+
                                                 </div>
-                                                <div className="btn-shop-prod" > <a href=""> <button className='bg-black text-white black-btn-shop rounded-[30px] flex items-center gap-2'><img src={cart} alt="" className='w-[20px] h-[20px] invert' />Add to cart</button></a></div>
+                                                <div className="product-info-shop w-[52%]">
+                                                    <h3 className='productname mb-[8px]'>Women's slim-fit cotton tank</h3>
+                                                    <p className='price-of-product mb-[8px]'>$16.00</p>
+                                                    <div className="review-product my-[15px]">
+                                                        <FontAwesomeIcon icon={faStar} className=" text-[12px] text-[#000]" />
+                                                        <FontAwesomeIcon icon={faStar} className=" text-[12px] text-[#000]" />
+                                                        <FontAwesomeIcon icon={faStar} className=" text-[12px] text-[#000]" />
+                                                        <FontAwesomeIcon icon={faStar} className=" text-[12px] text-[#000]" />
+                                                        <FontAwesomeIcon icon={faStar} className=" text-[12px] text-[#e6e6e6]" />
+                                                    </div>
+                                                    <div className="btn-shop-prod" > <a href=""> <button className='bg-black text-white black-btn-shop rounded-[30px] flex items-center gap-2'><img src={cart} alt="" className='w-[20px] h-[20px] invert' />Add to cart</button></a></div>
 
+                                                </div>
                                             </div>
-                                        </div>
-                                    </a>
+                                        </a>
+                                    </div>
                                 </div>
-                            </div>
                             </div>
                             {/* third product */}
                             <div className="thirdProd">
-                            {/* <div className="three bg-primary-red text-white font-medium rounded-[50%] w-[35px] h-[35px] flex justify-center items-center ">3</div> */}
-                            <div className="three "><div className="" >
-                                <a href="" className='w-[410px] h-[260px] absolute left-[-7%] bottom-[5%] z-[0]'>
-                                    <div className="product-wrapper flex items-center bg-white">
-                                        <div className="image-part w-[48%] relative">
-                                            <img src={Product3a} alt="" className='first-image ' />
-                                            <img src={Product3b} alt="" className='second-image absolute top-0' />
+                                {/* <div className="three bg-primary-red text-white font-medium rounded-[50%] w-[35px] h-[35px] flex justify-center items-center ">3</div> */}
+                                <div className={`three ${activeProduct === 'three' ? 'active' : ''}`}
+                                    onMouseEnter={() => setActiveProduct('three')}
+                                    onMouseLeave={() => setActiveProduct(null)}
+                                >
+                                    <div className="" >
+                                        <a href="javascript:void(0)" className={`product-card-three max-w-[410px] w-full max-h-[260px] h-full absolute left-[-7%] bottom-[5%] ${activeProduct === 'three' ? 'active' : ''}`}>
 
-                                        </div>
-                                        <div className="product-info-shop w-[52%]">
-                                            <h3 className='productname mb-[8px]'>Textured vegan leather moto jacket</h3>
-                                            <p className='price-of-product mb-[8px]'>$693.00-$699.00</p>
-                                            <div className="review-product my-[15px]">
-                                                <FontAwesomeIcon icon={faStar} className=" text-[12px] text-[#000]" />
-                                                <FontAwesomeIcon icon={faStar} className=" text-[12px] text-[#000]" />
-                                                <FontAwesomeIcon icon={faStar} className=" text-[12px] text-[#000]" />
-                                                <FontAwesomeIcon icon={faStar} className=" text-[12px] text-[#000]" />
-                                                <FontAwesomeIcon icon={faStar} className=" text-[12px] text-[#e6e6e6]" />
+                                            <div className="product-wrapper flex items-center bg-white">
+                                                <div className="image-part w-[48%] relative">
+                                                    <img src={Product3a} alt="" className='first-image ' />
+                                                    <img src={Product3b} alt="" className='second-image absolute top-0' />
+
+                                                </div>
+                                                <div className="product-info-shop w-[52%]">
+                                                    <h3 className='productname mb-[8px]'>Textured vegan leather moto jacket</h3>
+                                                    <p className='price-of-product mb-[8px]'>$693.00-$699.00</p>
+                                                    <div className="review-product my-[15px]">
+                                                        <FontAwesomeIcon icon={faStar} className=" text-[12px] text-[#000]" />
+                                                        <FontAwesomeIcon icon={faStar} className=" text-[12px] text-[#000]" />
+                                                        <FontAwesomeIcon icon={faStar} className=" text-[12px] text-[#000]" />
+                                                        <FontAwesomeIcon icon={faStar} className=" text-[12px] text-[#000]" />
+                                                        <FontAwesomeIcon icon={faStar} className=" text-[12px] text-[#e6e6e6]" />
+                                                    </div>
+                                                    <div className="btn-shop-prod" > <a href=""> <button className='bg-black text-white black-btn-shop rounded-[30px] flex items-center gap-2'><img src={cart} alt="" className='w-[20px] h-[20px] invert' />Select options</button></a></div>
+
+                                                </div>
                                             </div>
-                                            <div className="btn-shop-prod" > <a href=""> <button className='bg-black text-white black-btn-shop rounded-[30px] flex items-center gap-2'><img src={cart} alt="" className='w-[20px] h-[20px] invert' />Select options</button></a></div>
-
-                                        </div>
+                                        </a>
                                     </div>
-                                </a>
-                            </div>
-                            </div>
+                                </div>
                             </div>
                         </div>
                     </div>

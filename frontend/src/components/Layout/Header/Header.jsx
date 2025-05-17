@@ -224,37 +224,43 @@ const row222 = [
 const category = [
   {
     id: 1,
-    item: 'Women'
+    item: 'Women',
+    image: Category1
 
   },
   {
     id: 2,
-    item: 'Men'
+    item: 'Men',
+    image: Category2
 
   },
   {
     id: 3,
-    item: 'Shoes'
+    item: 'Shoes',
+    image: Category3
 
   },
   {
     id: 4,
-    item: 'Bags'
+    item: 'Bags',
+    image: Category4
 
   },
   {
     id: 5,
-    item: 'Glasses'
+    item: 'Glasses',
+    image: Category5
 
   },
   {
     id: 6,
-    item: 'Jwellry'
+    item: 'Jwellry',
+    image: Category6
 
   }
 ]
 
-const men =  [
+const men = [
   { id: 1, item: 'Jackets & Coats' },
   { id: 2, item: 'Jeans' },
   { id: 3, item: 'Loungewear' },
@@ -279,7 +285,7 @@ const men =  [
 
 
 
-const Women =  [
+const Women = [
   { id: 1, item: 'Dresses' },
   { id: 2, item: 'Jackets & Coats' },
   { id: 3, item: 'Jeans' },
@@ -301,6 +307,44 @@ const Header = () => {
   const toggleSidebar = () => {
     setIsOpen(!isOpen);
   };
+
+// category fetch from database
+const [categories, setCategories] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  const baseUrl = process.env.REACT_APP_API_URL;
+
+  // Optional: Map display names to image file names
+  const imageFileNames = {
+    Women: 'accessories-women-cat.jpg',
+    Men: 'accessories-men-cat.jpg',
+    Shoes: 'shoes-cat.jpg',
+    Bags: 'bag-cat.jpg',
+    Glasses: 'glasses-cat.jpg',
+    Jewelry: 'jewellery-cat.jpg',
+  };
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch('http://localhost:5000/GetCategory');
+        if (!response.ok) throw new Error('Network response was not ok');
+        const data = await response.json();
+        setCategories(data);
+      } catch (err) {
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>Error: {error}</div>;
+
 
 
 
@@ -498,46 +542,20 @@ const Header = () => {
                           <h4 className=" pr-[30px] text-[14px] text-primary-btnHover capitalize mb-[25px] leading-[1.4]">Men</h4>
                           <div className="grid grid-cols-2 gap-4 ">
                             <ul className="space-y-1 text-sm pt-[5px] ">
+                              {row1.map(({ id, item }) => (
+                                <li key={id}>
+                                  <a href="#" className=" py-[4px] font-medium pr-[30px] hover:text-primary-red">{item}</a>
+                                </li>
+                              ))}
 
-                              <li >
-                                <a href="#" className=" py-[4px] font-medium pr-[30px] hover:text-primary-red">Jackets & Coats</a>
-                              </li>
-                              <li >
-                                <a href="#" className=" py-[4px] font-medium pr-[30px] hover:text-primary-red">Jeans</a>
-                              </li>
-                              <li >
-                                <a href="#" className=" py-[4px] font-medium pr-[30px] hover:text-primary-red">Loungewear</a>
-                              </li>
-                              <li >
-                                <a href="#" className=" py-[4px] font-medium pr-[30px] hover:text-primary-red">Polo</a>
-                              </li>
-                              <li >
-                                <a href="#" className=" py-[4px] font-medium pr-[30px] hover:text-primary-red">shirts</a>
-                              </li>
-                              <li >
-                                <a href="#" className=" py-[4px] font-medium pr-[30px] hover:text-primary-red">Shorts</a>
-                              </li>
                             </ul>
                             <ul className="space-y-1 text-sm">
+                              {row2.map(({ id, item }) => (
+                                <li key={id}>
+                                  <a href="#" className=" py-[4px] font-medium pr-[30px] hover:text-primary-red">{item}</a>
+                                </li>
+                              ))}
 
-                              <li >
-                                <a href="#" className=" py-[4px] font-medium pr-[30px] hover:text-primary-red">Suits</a>
-                              </li>
-                              <li >
-                                <a href="#" className=" py-[4px] font-medium pr-[30px] hover:text-primary-red">Swimwear</a>
-                              </li>
-                              <li >
-                                <a href="#" className=" py-[4px] font-medium pr-[30px] hover:text-primary-red">T-shirts</a>
-                              </li>
-                              <li >
-                                <a href="#" className=" py-[4px] font-medium pr-[30px] hover:text-primary-red">Tracksuits</a>
-                              </li>
-                              <li >
-                                <a href="#" className=" py-[4px] font-medium pr-[30px] hover:text-primary-red">Trousers</a>
-                              </li>
-                              <li >
-                                <a href="#" className=" py-[4px] font-medium pr-[30px] hover:text-primary-red">Underwear</a>
-                              </li>
                             </ul>
                           </div>
 
@@ -547,43 +565,22 @@ const Header = () => {
                         <div className='w-1/3' >
 
                           <h4 className="pr-[30px] text-[14px] text-primary-btnHover capitalize mb-[25px] leading-[1.4] ">Women</h4>
-                          <div className="grid grid-cols-2 gap-4">
+                          <div className="grid grid-cols-2 gap-4 ">
                             <ul className="space-y-1 text-sm pt-[5px] ">
-
-                              <li >
-                                <a href="#" className=" py-[4px] font-medium pr-[30px] hover:text-primary-red">Dresses</a>
-                              </li>
-                              <li >
-                                <a href="#" className=" py-[4px] font-medium pr-[30px] hover:text-primary-red">Jackets & Coats</a>
-                              </li>
-                              <li >
-                                <a href="#" className=" py-[4px] font-medium pr-[30px] hover:text-primary-red">Jeans</a>
-                              </li>
-                              <li >
-                                <a href="#" className=" py-[4px] font-medium pr-[30px] hover:text-primary-red">Loungewear</a>
-                              </li>
+                              {row11.map(({ id, item }) => (
+                                <li key={id}>
+                                  <a href="#" className=" py-[4px] font-medium pr-[30px] hover:text-primary-red">{item}</a>
+                                </li>
+                              ))}
 
                             </ul>
-                            <ul className="space-y-1 text-sm pt-[5px] ">
+                            <ul className="space-y-1 text-sm">
+                              {row22.map(({ id, item }) => (
+                                <li key={id}>
+                                  <a href="#" className=" py-[4px] font-medium pr-[30px] hover:text-primary-red">{item}</a>
+                                </li>
+                              ))}
 
-                              <li >
-                                <a href="#" className=" py-[4px] font-medium pr-[30px] hover:text-primary-red">Shorts</a>
-                              </li>
-                              <li >
-                                <a href="#" className=" py-[4px] font-medium pr-[30px] hover:text-primary-red">Skirts</a>
-                              </li>
-                              <li >
-                                <a href="#" className=" py-[4px] font-medium pr-[30px] hover:text-primary-red">Suits</a>
-                              </li>
-                              <li >
-                                <a href="#" className=" py-[4px] font-medium pr-[30px] hover:text-primary-red">Swimwear</a>
-                              </li>
-                              <li >
-                                <a href="#" className=" py-[4px] font-medium pr-[30px] hover:text-primary-red">Top</a>
-                              </li>
-                              <li >
-                                <a href="#" className=" py-[4px] font-medium pr-[30px] hover:text-primary-red">Trousers</a>
-                              </li>
                             </ul>
                           </div>
 
@@ -594,49 +591,24 @@ const Header = () => {
                         <div className='w-1/3'>
 
                           <h4 className=" pr-[30px] text-[14px] text-primary-btnHover capitalize mb-[25px] leading-[1.4]">Others</h4>
-                          <div className="grid grid-cols-2 gap-4">
+                          <div className="grid grid-cols-2 gap-4 ">
                             <ul className="space-y-1 text-sm pt-[5px] ">
-
-                              <li >
-                                <a href="#" className=" py-[4px] font-medium pr-[30px] hover:text-primary-red">Accessories</a>
-                              </li>
-                              <li >
-                                <a href="#" className=" py-[4px] font-medium pr-[30px] hover:text-primary-red">Bags</a>
-                              </li>
-                              <li >
-                                <a href="#" className=" py-[4px] font-medium pr-[30px] hover:text-primary-red">Belts</a>
-                              </li>
-                              <li >
-                                <a href="#" className=" py-[4px] font-medium pr-[30px] hover:text-primary-red">Hats</a>
-                              </li>
-                              <li >
-                                <a href="#" className=" py-[4px] font-medium pr-[30px] hover:text-primary-red">Watches</a>
-                              </li>
+                              {row111.map(({ id, item }) => (
+                                <li key={id}>
+                                  <a href="#" className=" py-[4px] font-medium pr-[30px] hover:text-primary-red">{item}</a>
+                                </li>
+                              ))}
 
                             </ul>
-                            <ul className="space-y-1 text-sm pt-[5px] ">
+                            <ul className="space-y-1 text-sm">
+                              {row222.map(({ id, item }) => (
+                                <li key={id}>
+                                  <a href="#" className=" py-[4px] font-medium pr-[30px] hover:text-primary-red">{item}</a>
+                                </li>
+                              ))}
 
-                              <li >
-                                <a href="#" className=" py-[4px] font-medium pr-[30px] hover:text-primary-red">Jewelry</a>
-                              </li>
-                              <li >
-                                <a href="#" className=" py-[4px] font-medium pr-[30px] hover:text-primary-red">Sale</a>
-                              </li>
-                              <li >
-                                <a href="#" className=" py-[4px] font-medium pr-[30px] hover:text-primary-red">Shoes</a>
-                              </li>
-                              <li >
-                                <a href="#" className=" py-[4px] font-medium pr-[30px] hover:text-primary-red">Vintage</a>
-                              </li>
-                              <li >
-                                <a href="#" className=" py-[4px] font-medium pr-[30px] hover:text-primary-red">Designers</a>
-                              </li>
-                              <li >
-                                <a href="#" className=" py-[4px]  font-medium pr-[30px] hover:text-primary-red">Lifestyle</a>
-                              </li>
                             </ul>
                           </div>
-
 
                         </div>
                       </div >
@@ -653,70 +625,46 @@ const Header = () => {
 
                         {/* ============================================================= */}
                         {/* <h4 className="font-semibold text-sm mb-2">Title</h4> */}
+                         <ul  className="py-[50px] text-sm font-medium flex gap-[20px] xl:gap-[30px] justify-center items-center text-center">
+                           {categories.map((category, index) => {
+            const fileName = imageFileNames[category.category] || 'default.jpg';
+            const imageUrl = `${baseUrl}/assets/images/dropdowns/${fileName}`;
 
-                        <ul className="py-[50px] text-sm font-medium flex gap-[20px] xl:gap-[30px] justify-center items-center text-center">
-                          <li className='flex flex-col' >
-                            <div className="rounded-[50%] h-[150px] 5xl:h-[166px] xl:h-[179.156px] w-[150px] 5xl:w-[166px] xl:w-[179.156px] bg-[#f3f3f3] overflow-hidden rounded-dropdown">
-                              <a href="">  <LazyLoadImage
-                                src={Category1}
-                                alt="Category Women"
-                                className="category w-full h-full object-contain"
-                              />
-                                {/* <FontAwesomeIcon icon="fa-solid fa-plus" /> */}
+            return (
+              <li key={index} className='flex flex-col'>
+                 <div className="rounded-[50%] h-[150px] 5xl:h-[166px] xl:h-[179.156px] w-[150px] 5xl:w-[166px] xl:w-[179.156px] bg-[#f3f3f3] overflow-hidden rounded-dropdown">
+                   <a href="">  <LazyLoadImage
+                                  src={imageUrl}
+                                  alt={category.category}
+                                  className="category w-full h-full object-contain"
+                                />
+                                  {/* <FontAwesomeIcon icon="fa-solid fa-plus" /> */}
 
-                              </a>
-                            </div>
-                            <a href="#" className="pt-[20px] text-[17px] leading-[1.4] hover:text-primary-red">Women</a>
-                          </li>
-                          <li className='flex flex-col'  >
-                            <div className="rounded-[50%] h-[150px] xl:h-[179.156px] w-[150px] xl:w-[179.156px] bg-[#f3f3f3] overflow-hidden rounded-dropdown">
-                              <LazyLoadImage
-                                src={Category2}
-                                alt="CategoryMmen"
-                                className="category w-full h-full object-contain"
-                              />
-                            </div>
-                            <a href="#" className="pt-[20px] text-[17px] leading-[1.4] hover:text-primary-red">Men</a>
-                          </li>
+                                </a>
+                 </div>
+                  <a href="#" className="pt-[20px] text-[17px] leading-[1.4] hover:text-primary-red">{category.category}</a>
+                
+              </li>
+            );
+          })}
+                        {/* {category.map(({ id, item,image }) => (
+                         
+                            <li key={id} className='flex flex-col' >
+                              <div className="rounded-[50%] h-[150px] 5xl:h-[166px] xl:h-[179.156px] w-[150px] 5xl:w-[166px] xl:w-[179.156px] bg-[#f3f3f3] overflow-hidden rounded-dropdown">
+                                <a href="">  <LazyLoadImage
+                                  src={image}
+                                  alt="Category Women"
+                                  className="category w-full h-full object-contain"
+                                />
+                                  {/* <FontAwesomeIcon icon="fa-solid fa-plus" /> */}
 
-                          <li className='flex flex-col'  >
-                            <div className="rounded-[50%] h-[150px] xl:h-[179.156px] w-[150px] xl:w-[179.156px] bg-[#f3f3f3] overflow-hidden rounded-dropdown">
-                              <LazyLoadImage
-                                src={Category3}
-                                alt="Category Shoes"
-                                className="category w-full h-full object-contain"
-                              />
-                            </div>
-                            <a href="#" className="pt-[20px] text-[17px] leading-[1.4] hover:text-primary-red">Shoes</a>
-                          </li>
-                          <li className='flex flex-col'  >
-                            <div className="rounded-[50%] h-[150px] xl:h-[179.156px] w-[150px] xl:w-[179.156px] bg-[#f3f3f3] overflow-hidden rounded-dropdown">
-
-                              <LazyLoadImage
-                                src={Category4}
-                                alt="Category Bags"
-                                className="category w-full h-full object-contain"
-                              />   </div>
-                            <a href="#" className="pt-[20px] text-[17px] leading-[1.4] hover:text-primary-red">Bags</a>
-                          </li>
-                          <li className='flex flex-col' >
-                            <div className="rounded-[50%] h-[150px] xl:h-[179.156px] w-[150px] xl:w-[179.156px] bg-[#f3f3f3] overflow-hidden rounded-dropdown">
-                              <LazyLoadImage
-                                src={Category5}
-                                alt="Category Glasses"
-                                className="category w-full h-full object-contain"
-                              />   </div>
-                            <a href="#" className="pt-[20px] text-[17px] leading-[1.4] hover:text-primary-red">Glasses</a>
-                          </li>
-                          <li className='flex flex-col'  >
-                            <div className="rounded-[50%] h-[150px] xl:h-[179.156px] w-[150px] xl:w-[179.156px] bg-[#f3f3f3] overflow-hidden rounded-dropdown">
-                              <LazyLoadImage
-                                src={Category6}
-                                alt="Category Jwelery"
-                                className="category w-full h-full object-contain"
-                              /></div>
-                            <a href="#" className="pt-[20px] text-[17px] leading-[1.4] hover:text-primary-red">Jwelery</a>
-                          </li>
+                                {/* </a>
+                              </div>
+                              <a href="#" className="pt-[20px] text-[17px] leading-[1.4] hover:text-primary-red">{item}</a>
+                            </li> */}
+                         
+                          
+                        {/* ))} */} 
                         </ul>
                       </div>
                     </div >

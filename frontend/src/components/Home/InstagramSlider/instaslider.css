@@ -41,3 +41,15 @@ div#root {
    
     
 }
+
+
+
+.instagram-slider .slick-slide {
+  display: flex !important;
+  justify-content: center;
+}
+
+.instagram-slider .slick-track {
+  display: flex;
+  align-items: center;
+}
