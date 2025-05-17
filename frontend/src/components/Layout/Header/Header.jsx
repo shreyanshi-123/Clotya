@@ -326,21 +326,12 @@ const [categories, setCategories] = useState([]);
   };
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch('http://localhost:5000/GetCategory');
-        if (!response.ok) throw new Error('Network response was not ok');
-        const data = await response.json();
-        setCategories(data);
-      } catch (err) {
-        setError(err.message);
-      } finally {
-        setLoading(false);
-      }
-    };
+  fetch('/api/getCategory')
+    .then(res => res.json())
+    .then(data => setCategories(data))
+    .catch(err => console.error(err));
+}, []);
 
-    fetchData();
-  }, []);
 
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error: {error}</div>;
