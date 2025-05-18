@@ -325,12 +325,25 @@ const [categories, setCategories] = useState([]);
     Jewelry: 'jewellery-cat.jpg',
   };
 
-  useEffect(() => {
-  fetch('/api/getCategory')
-    .then(res => res.json())
-    .then(data => setCategories(data))
-    .catch(err => console.error(err));
-}, []);
+   useEffect(() => {
+    const fetchCategories = async () => {
+      try {
+        const res = await fetch(`${baseUrl}/api/get-category`);
+        if (!res.ok) throw new Error('Failed to fetch categories');
+        const data = await res.json();
+        setCategories(data);  // Populate categories with the fetched data
+      } catch (err) {
+        setError(err.message);  // If there is an error, capture it
+      } finally {
+        setLoading(false);  // End loading state once fetching is complete
+      }
+    };
+
+    fetchCategories();
+  }, [baseUrl]);  // Only rerun the effect if baseUrl changes
+
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>Error: {error}</div>;
 
 
   if (loading) return <div>Loading...</div>;
@@ -339,21 +352,7 @@ const [categories, setCategories] = useState([]);
 
 
 
-  // const cartRef = useRef(null);
-
-  // // Close dropdown when clicking outside
-  // useEffect(() => {
-  //   function handleClickOutside(event) {
-  //     if (cartRef.current && !cartRef.current.contains(event.target))      {
-  //       setIsOpen(false);
-  //     }
-  //   }
-
-  //   document.addEventListener("mousedown", handleClickOutside);
-  //   return () => {
-  //     document.removeEventListener("mousedown", handleClickOutside);
-  //   };
-  // }, [cartRef]);
+  
   return (
     <header className="relative z-50">
       {/* Promo Bar */}

@@ -1,35 +1,28 @@
 const express = require('express');
-const path = require('path');
-const cors = require('cors');
 const mongoose = require('mongoose');
-const getCategory = require('./backend/routes/register.js');
+const dotenv = require('dotenv');
+const cors = require('cors');
+const categoryRoutes = require('./backend/routes/register');  // Ensure the correct path
+
+dotenv.config(); // Load env variables
 
 const app = express();
 const PORT = process.env.PORT || 5000;
-
-// MongoDB connection
-mongoose.connect('mongodb+srv://shreyanshi:wvq9lKZsEp3024Uu@cluster0.ge0id7d.mongodb.net/test', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-});
-mongoose.set('strictQuery', true);
-
-const db = mongoose.connection;
-db.on('error', (error) => console.error(error));
-db.once('open', () => console.log('Connected to Database'));
 
 // Middleware
 app.use(cors());
 app.use(express.json());
 
-// API routes
-app.use('/api', getCategory);
+// Use the category routes
+app.use('/api', categoryRoutes); // Prefix '/api' for all routes from categoryRoutes
 
-// Serve React frontend
-app.use(express.static(path.join(__dirname, 'client/build')));
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'client/build/index.html'));
+// MongoDB connection
+mongoose.connect(process.env.MONGO_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+}).then(() => {
+  console.log('✅ MongoDB connected');
+  app.listen(PORT, () => console.log(`🚀 Server running at http://localhost:${PORT}`));
+}).catch((error) => {
+  console.error('❌ MongoDB connection error:', error.message);
 });
-
-// Start the server
-app.listen(PORT, () => console.log(`Server Started on port ${PORT}`));
