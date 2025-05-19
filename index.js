@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const cors = require('cors');
 const categoryRoutes = require('./backend/routes/register');  // Ensure the correct path
-console.log (categoryRoutes);
+// console.log ('categoryRoutes');
 dotenv.config(); // Load env variables
 
 const app = express();
@@ -16,12 +16,12 @@ app.use(cors());
 app.use(express.json());
 
 // Serve the static files from the React app
-app.use(express.static(path.join(__dirname, './frontend/build')));
+app.use(express.static(path.join(__dirname, './frontend/dist')));
 
 // Handle requests by serving index.html for all routes
-// app.get('*', (req, res) => {
-//     res.sendFile(path.join(__dirname, './frontend/build', 'index.html'));
-// });
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, './frontend/dist', 'index.html'));
+});
 
 // Use the category routes
 app.use('/api', categoryRoutes); // Prefix '/api' for all routes from categoryRoutes
