@@ -19,9 +19,9 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, './frontend/build')));
 
 // Handle requests by serving index.html for all routes
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, './frontend/build', 'index.html'));
-});
+// app.get('*', (req, res) => {
+//     res.sendFile(path.join(__dirname, './frontend/build', 'index.html'));
+// });
 
 // Use the category routes
 app.use('/api', categoryRoutes); // Prefix '/api' for all routes from categoryRoutes
