@@ -322,28 +322,28 @@ const [categories, setCategories] = useState([]);
     Shoes: 'shoes-cat.jpg',
     Bags: 'bag-cat.jpg',
     Glasses: 'glasses-cat.jpg',
-    Jewelry: 'jewellery-cat.jpg',
+    jewellery: 'jewelry-cat.jpg',
   };
 
-   useEffect(() => {
-    const fetchCategories = async () => {
-      try {
-        const res = await fetch(`${baseUrl}/api/get-category`);
-        if (!res.ok) throw new Error('Failed to fetch categories');
-        const data = await res.json();
-        setCategories(data);  // Populate categories with the fetched data
-      } catch (err) {
-        setError(err.message);  // If there is an error, capture it
-      } finally {
-        setLoading(false);  // End loading state once fetching is complete
-      }
-    };
-
-    fetchCategories();
-  }, [baseUrl]);  // Only rerun the effect if baseUrl changes
-
-  if (loading) return <div>Loading...</div>;
-  if (error) return <div>Error: {error}</div>;
+    useEffect(() => {
+       const fetchData = async () => {
+         try {
+           const response = await fetch('http://localhost:5000/api/get-category');
+           if (!response.ok) throw new Error('Network response was not ok');
+           const data = await response.json();
+           setCategories(data);
+         } catch (err) {
+           setError(err.message);
+         } finally {
+           setLoading(false);
+         }
+       };
+   
+       fetchData();
+     }, []);
+   
+     if (loading) return <div>Loading...</div>;
+     if (error) return <div>Error: {error}</div>;
 
 
   if (loading) return <div>Loading...</div>;

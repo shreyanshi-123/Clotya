@@ -4,13 +4,8 @@ import Home from './components/Home/Home';
 import PrivacyPolicy from './components/PrivacyPolicy/PrivacyPolicy';
 import TermsConditions from './components/TermsConditions/TermsConditions';
 import PageNotFound from './components/Layout/PageNotFound';
-// import CookieConsent from "react-cookie-consent";
-// import FloorPlanPage from './components/FloorPlan/floorPlan';
-// import SmartLivingPage from './components/SmartLiving/SmartLiving';
-// import ConnectivityPage from './components/Connectivity/connectivity';
-// import GalleryPage from './components/Gallery/gallery';
-// import ContactUsPage from './components/ContactUs/ContactUs';
-// import AmenityPage from './components/Amenities/Amenities';
+import Dashboard from './components/Dashboard/dashboard';
+
 
 function App() {
 
@@ -39,20 +34,15 @@ function App() {
             <Route path='/terms-conditions' element={<TermsConditions />} />
             <Route path='*' element={<PageNotFound />} />
 
-            <Route path='/aboutus' element={<Home />} />
+            {/* <Route path='/aboutus' element={<Home />} />
             <Route path='/floorplan' element={<Home />} />
            
             <Route path='/amenities' element={<Home />} />
             <Route path='/connectivity' element={<Home />} />
             <Route path='/gallery' element={<Home />} />
-            <Route path='/contact' element={<Home />} />
-          
-            {/* <Route path='/floor-plan' element={<FloorPlanPage />} />
-            <Route path='/smart-living' element={<SmartLivingPage />} />
-            <Route path='/connectivities' element={<ConnectivityPage />} />
-            <Route path='/galleries' element={<GalleryPage />} />
-            <Route path='/contactus' element={<ContactUsPage />} />
-        <Route path='amenity' element={<AmenityPage/>}/> */}
+            <Route path='/contact' element={<Home />} /> */}
+          <Route path='/dashboard' element={<Dashboard />} />
+           
 
           </Route>
         </Routes>
